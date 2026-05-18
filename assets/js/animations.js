@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ---
   const observerOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.15
+    rootMargin: '0px 0px 150px 0px',
+    threshold: 0.02
   };
 
   const observer = new IntersectionObserver((entries, obs) => {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
           items.forEach((item, index) => {
             setTimeout(() => {
               item.classList.add('active');
-            }, 600 * (index + 1)); // Stagger timeline items
+            }, 120 * (index + 1)); // Stagger timeline items quickly
           });
         }
 

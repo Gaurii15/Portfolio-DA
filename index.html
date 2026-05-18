@@ -238,6 +238,8 @@
     .hero-img-col .circular-img-wrapper {
       width: 420px;
       height: 420px;
+      aspect-ratio: 1 / 1;
+      flex-shrink: 0;
       border-radius: 50%;
       overflow: hidden;
       border: 4px solid rgba(192, 183, 232, 0.2);
@@ -454,6 +456,8 @@
         margin-top: 60px;
         width: 100%;
         min-height: 400px;
+        overflow: visible; /* Let cards float nicely */
+        position: relative;
       }
 
       .hero-actions {
@@ -472,7 +476,24 @@
       .card-1,
       .card-2,
       .card-3 {
-        display: none;
+        display: flex;
+        transform: scale(0.75);
+        z-index: 6;
+      }
+
+      .card-1 {
+        top: 2%;
+        right: -15px;
+      }
+
+      .card-2 {
+        bottom: 15%;
+        left: -25px;
+      }
+
+      .card-3 {
+        bottom: -5px;
+        right: 15px;
       }
 
       .hero-text h1 {
@@ -495,12 +516,47 @@
 
 
       .bg-words-container {
-        display: none;
+        display: block;
       }
+
+      .bg-word {
+        font-size: 2rem !important;
+      }
+      .bg-word:nth-child(1) { font-size: 2.5rem !important; }
+      .bg-word:nth-child(2) { font-size: 1.6rem !important; }
+      .bg-word:nth-child(3) { font-size: 2.2rem !important; }
+      .bg-word:nth-child(4) { font-size: 2.8rem !important; }
+      .bg-word:nth-child(5) { font-size: 3rem !important; }
+      .bg-word:nth-child(6) { font-size: 2rem !important; }
+      .bg-word:nth-child(7) { font-size: 1.8rem !important; }
 
       .hero-img-col .circular-img-wrapper {
         width: 320px;
         height: 320px;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-img-col .circular-img-wrapper {
+        width: 250px;
+        height: 250px;
+      }
+      .card-1, .card-2, .card-3 {
+        transform: scale(0.58);
+      }
+      .card-1 {
+        top: -5px;
+        right: -30px;
+      }
+      .card-2 {
+        bottom: 10%;
+        left: -40px;
+      }
+      .card-3 {
+        bottom: -20px;
+        right: -15px;
       }
     }
   </style>
@@ -516,7 +572,6 @@
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="resume.html">Resume</a></li>
-        <li><a href="services.html">Services</a></li>
         <li><a href="certifications.html">Certificates</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="blogs.html">Blogs</a></li>
@@ -647,6 +702,175 @@
           </div>
         </div>
       </div>
+
+      <!-- SERVICES SECTION -->
+      <div class="section-header reveal">
+        <h2>Services</h2>
+        <p>I transform raw data into meaningful insights, interactive dashboards, and strategic business decisions.</p>
+      </div>
+
+      <div class="services-grid reveal">
+        
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          </div>
+          <h3>Data Analysis</h3>
+          <ul class="service-bullets">
+            <li>Performing deep-dive descriptive analytics</li>
+            <li>Identifying hidden trends and anomalies</li>
+            <li>Conducting statistical analysis and testing</li>
+          </ul>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16 16V5H5v14h14zm-4-8h2v6h-2v-6zm-4-4h2v10h-2V7H7v10h2V7z"/></svg>
+          </div>
+          <h3>Dashboard Development</h3>
+          <ul class="service-bullets">
+            <li>Designing interactive KPIs in Power BI</li>
+            <li>Building executive-level reporting tools</li>
+            <li>Data modeling and optimizing UX design</li>
+          </ul>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 15h-2v-2h2v2zm0-4h-2V7h2v7z"/></svg>
+          </div>
+          <h3>Data Cleaning & Prep</h3>
+          <ul class="service-bullets">
+            <li>Handling missing values and outliers</li>
+            <li>Formatting unstructured raw datasets</li>
+            <li>Ensuring high data integrity and accuracy</li>
+          </ul>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 21l-8-8 8-8 8 8-8 8m0-12.5l-4.5 4.5 4.5 4.5 4.5-4.5L12 8.5z"/></svg>
+          </div>
+          <h3>Business Insights</h3>
+          <ul class="service-bullets">
+            <li>Translating complex data into strategy</li>
+            <li>Providing recommendations for ROI</li>
+            <li>Clear KPI monitoring and storytelling</li>
+          </ul>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+          </div>
+          <h3>Python Processing</h3>
+          <ul class="service-bullets">
+            <li>Automating workflows with Pandas</li>
+            <li>Advanced data manipulation with NumPy</li>
+            <li>Building resilient processing pipelines</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- HOW I WORK -->
+      <div class="reveal">
+        <div class="section-header">
+          <h2>How I Work</h2>
+          <p>A systematic and structured approach to solving complex data problems</p>
+        </div>
+        
+        <div class="workflow-container reveal-left">
+          <div class="workflow-line"></div>
+          
+          <div class="workflow-step">
+            <div class="step-number">01</div>
+            <h4 class="step-title">Understand Problem</h4>
+            <p class="step-desc">Defining the core business objectives, identifying questions, and setting key metrics.</p>
+          </div>
+          
+          <div class="workflow-step">
+            <div class="step-number">02</div>
+            <h4 class="step-title">Data Prep & Cleaning</h4>
+            <p class="step-desc">Gathering, preprocessing, and formatting robust datasets for accurate analysis.</p>
+          </div>
+          
+          <div class="workflow-step">
+            <div class="step-number">03</div>
+            <h4 class="step-title">Analysis & Visualization</h4>
+            <p class="step-desc">Discovering underlying patterns and building interactive, beautiful dashboards.</p>
+          </div>
+          
+          <div class="workflow-step">
+            <div class="step-number">04</div>
+            <h4 class="step-title">Insights & Delivery</h4>
+            <p class="step-desc">Translating visualizations into clear, strategic recommendations and delivering results.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHY WORK WITH ME & IMPACT SECTION -->
+      <div class="bottom-wrapper reveal">
+        
+        <!-- Why Work With Me -->
+        <div class="why-me">
+          <div class="section-header" style="text-align: left; margin-bottom: 30px; margin-top: 0;">
+            <h2>Why Work With Me</h2>
+          </div>
+          <div class="feature-list">
+            
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Data-Driven Approach</h4>
+                <p>Every business decision is backed by solid empirical evidence and rigorous quantitative analysis.</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Clean & Intuitive Dashboards</h4>
+                <p>I prioritize UX to ensure complex data models are easily digestible for non-technical stakeholders.</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Business-Focused Insights</h4>
+                <p>Analysis without business context is noise. I deliver strategies that directly impact your metrics.</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Clear Communication</h4>
+                <p>Effective data storytelling efficiently bridges the gap between technical processes and end goals.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
+        <!-- Trust / Impact -->
+        <div class="impact">
+          <div class="impact-card">
+            <h2 style="margin-bottom: 40px; color: var(--text-light); text-transform: uppercase; font-size: 1.8rem;">Proven Impact</h2>
+            
+            <div class="impact-stat">50K+</div>
+            <div class="impact-label">Rows of Complex Data Analyzed</div>
+            
+            <div class="impact-stat">100%</div>
+            <div class="impact-label">Interactive Dashboard Delivery</div>
+            
+            <div class="impact-stat">✓</div>
+            <div class="impact-label">Actionable Strategies Generated</div>
+          </div>
+        </div>
+        
+      </div>
     </div>
 
   </main>
@@ -659,6 +883,21 @@
   </footer>
 
   <script src="assets/js/animations.js"></script>
+  <script>
+    // Trigger workflow timeline line loading on scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      const workflowCont = document.querySelector('.workflow-container');
+      if(workflowCont) observer.observe(workflowCont);
+    });
+  </script>
 </body>
 
 </html>
