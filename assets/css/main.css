@@ -114,6 +114,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .service-card::after, .blog-card::after {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
   background: var(--gradient-btn);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
 
 /* COMPONENT: PROGRESS BAR */
