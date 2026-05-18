@@ -3,30 +3,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ---
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px 150px 0px',
-    threshold: 0.02
+    rootMargin: '0px 0px -60px 0px', // Trigger precisely when item is 60px into viewport
+    threshold: 0.05
   };
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         
-        // General reveals
+        // General reveals (supports staggered lists, individual cards, timeline items)
         if (entry.target.classList.contains('reveal') || 
             entry.target.classList.contains('reveal-left') || 
-            entry.target.classList.contains('reveal-right')) {
+            entry.target.classList.contains('reveal-right') ||
+            entry.target.classList.contains('timeline-item') ||
+            entry.target.classList.contains('service-card') ||
+            entry.target.classList.contains('exp-item') ||
+            entry.target.classList.contains('cert-item')) {
           entry.target.classList.add('active');
         }
 
-        // Timeline drawing
+        // Timeline container drawing
         if (entry.target.classList.contains('timeline')) {
           entry.target.classList.add('active');
-          const items = entry.target.querySelectorAll('.timeline-item');
-          items.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add('active');
-            }, 120 * (index + 1)); // Stagger timeline items quickly
-          });
         }
 
         // Progress bars
@@ -64,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Select elements to observe
   const elementsToAnimate = document.querySelectorAll(
-    '.reveal, .reveal-left, .reveal-right, .timeline, .progress-bg, .stat-count'
+    '.reveal, .reveal-left, .reveal-right, .timeline, .timeline-item, .progress-bg, .stat-count, .service-card, .exp-item, .cert-item'
   );
   elementsToAnimate.forEach(el => observer.observe(el));
 
