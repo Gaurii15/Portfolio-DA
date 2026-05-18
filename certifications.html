@@ -153,7 +153,7 @@
 
     .cert-card-wrapper {
       background: transparent;
-      height: 380px;
+      height: 300px;
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
@@ -180,9 +180,10 @@
       border-radius: var(--border-radius-lg);
       display: flex;
       flex-direction: column;
-      padding: 40px 30px;
+      padding: 30px 25px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(192, 183, 232, 0.15);
+      overflow: hidden;
     }
 
     .cert-card-front {
@@ -200,41 +201,46 @@
       pointer-events: none;
     }
 
-    .cert-icon {
-      width: 80px;
-      height: 80px;
-      background: rgba(129, 118, 175, 0.1);
+    .cert-card-front::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-btn);
+      border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    }
+
+    .cert-check-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 24px;
+      height: 24px;
+      background: var(--gradient-btn);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 25px;
-      border: 1px solid rgba(192, 183, 232, 0.2);
-      transition: all 0.3s;
-    }
-
-    .cert-icon svg {
-      width: 40px;
-      height: 40px;
-      fill: var(--primary-light);
-    }
-
-    .cert-card-wrapper:hover .cert-icon {
-      transform: scale(1.1);
-      background: rgba(129, 118, 175, 0.25);
-      box-shadow: 0 0 20px rgba(129, 118, 175, 0.4);
+      color: var(--bg-deep);
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: 0 0 10px rgba(129, 118, 175, 0.4);
+      z-index: 2;
     }
 
     .cert-title {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       color: var(--text-light);
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       font-weight: 700;
       line-height: 1.4;
+      max-width: 90%;
     }
 
     .cert-platform {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: var(--primary-light);
       font-weight: 600;
       text-transform: uppercase;
@@ -604,18 +610,7 @@
       <div class="cert-card-wrapper" data-category="analytics">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
-                <rect x="2" y="3" width="20" height="13" rx="2" />
-                <path d="M1 20h22" />
-                <path d="M12 16v4" />
-                <path d="M6 13V9" style="stroke-width: 2;" />
-                <path d="M10 13V7" style="stroke-width: 2;" />
-                <path d="M14 13V10" style="stroke-width: 2;" />
-                <path d="M18 13V6" style="stroke-width: 2;" />
-                <path d="M6 9l4-2 4 3 4-4" style="stroke-width: 1.5; stroke: var(--text-light);" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">Deloitte Data Analytics Job Simulation</h3>
             <div class="cert-platform">Forage</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -638,18 +633,7 @@
       <div class="cert-card-wrapper" data-category="analytics">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
-                <rect x="2" y="3" width="20" height="13" rx="2" />
-                <path d="M1 20h22" />
-                <path d="M12 16v4" />
-                <path d="M6 13V9" style="stroke-width: 2;" />
-                <path d="M10 13V7" style="stroke-width: 2;" />
-                <path d="M14 13V10" style="stroke-width: 2;" />
-                <path d="M18 13V6" style="stroke-width: 2;" />
-                <path d="M6 9l4-2 4 3 4-4" style="stroke-width: 1.5; stroke: var(--text-light);" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">Goldman Sachs Excel Skills Job Simulation</h3>
             <div class="cert-platform">Forage</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -672,18 +656,7 @@
       <div class="cert-card-wrapper" data-category="analytics">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
-                <rect x="2" y="3" width="20" height="13" rx="2" />
-                <path d="M1 20h22" />
-                <path d="M12 16v4" />
-                <path d="M6 13V9" style="stroke-width: 2;" />
-                <path d="M10 13V7" style="stroke-width: 2;" />
-                <path d="M14 13V10" style="stroke-width: 2;" />
-                <path d="M18 13V6" style="stroke-width: 2;" />
-                <path d="M6 9l4-2 4 3 4-4" style="stroke-width: 1.5; stroke: var(--text-light);" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">Introduction to Data Analytics</h3>
             <div class="cert-platform">Simplilearn</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -708,18 +681,7 @@
       <div class="cert-card-wrapper" data-category="visualization">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
-                <!-- The slanted frame outline -->
-                <polygon points="8,9 18,4 18,20 8,20" />
-                <!-- Shortest column (left) -->
-                <polygon points="5,11 8,9.5 8,20 5,20" style="fill: var(--primary-light); fill-opacity: 0.35; stroke: var(--primary-light); stroke-width: 1.5;" />
-                <!-- Middle column -->
-                <polygon points="9.5,8.8 12.5,7.3 12.5,20 9.5,20" style="fill: var(--primary-light); fill-opacity: 0.7; stroke: var(--primary-light); stroke-width: 1.5;" />
-                <!-- Tallest column (right) -->
-                <polygon points="14,6.6 17,5.1 17,20 14,20" style="fill: var(--primary-light); stroke: var(--primary-light); stroke-width: 1.5;" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">Analyzing & Visualizing Data with Microsoft Power BI</h3>
             <div class="cert-platform">ISO</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -742,18 +704,7 @@
       <div class="cert-card-wrapper" data-category="visualization">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
-                <!-- The slanted frame outline -->
-                <polygon points="8,9 18,4 18,20 8,20" />
-                <!-- Shortest column (left) -->
-                <polygon points="5,11 8,9.5 8,20 5,20" style="fill: var(--primary-light); fill-opacity: 0.35; stroke: var(--primary-light); stroke-width: 1.5;" />
-                <!-- Middle column -->
-                <polygon points="9.5,8.8 12.5,7.3 12.5,20 9.5,20" style="fill: var(--primary-light); fill-opacity: 0.7; stroke: var(--primary-light); stroke-width: 1.5;" />
-                <!-- Tallest column (right) -->
-                <polygon points="14,6.6 17,5.1 17,20 14,20" style="fill: var(--primary-light); stroke: var(--primary-light); stroke-width: 1.5;" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">Hands-On Data Visualization with Microsoft Power BI</h3>
             <div class="cert-platform">Infosys Springboard</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -776,18 +727,7 @@
       <div class="cert-card-wrapper" data-category="visualization">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
-                <!-- The slanted frame outline -->
-                <polygon points="8,9 18,4 18,20 8,20" />
-                <!-- Shortest column (left) -->
-                <polygon points="5,11 8,9.5 8,20 5,20" style="fill: var(--primary-light); fill-opacity: 0.35; stroke: var(--primary-light); stroke-width: 1.5;" />
-                <!-- Middle column -->
-                <polygon points="9.5,8.8 12.5,7.3 12.5,20 9.5,20" style="fill: var(--primary-light); fill-opacity: 0.7; stroke: var(--primary-light); stroke-width: 1.5;" />
-                <!-- Tallest column (right) -->
-                <polygon points="14,6.6 17,5.1 17,20 14,20" style="fill: var(--primary-light); stroke: var(--primary-light); stroke-width: 1.5;" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">Power BI for Business Professionals</h3>
             <div class="cert-platform">Infosys Springboard</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -812,11 +752,7 @@
       <div class="cert-card-wrapper" data-category="datascience">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;">
-                <path d="M6 18a4 4 0 0 1-1-7.87 6 6 0 0 1 11.9-1.2A4.5 4.5 0 0 1 21 13.5a4.5 4.5 0 0 1-4.5 4.5H6z" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">Oracle Certified Data Science Professional</h3>
             <div class="cert-platform">Oracle University</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -839,11 +775,7 @@
       <div class="cert-card-wrapper" data-category="datascience">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;">
-                <path d="M6 18a4 4 0 0 1-1-7.87 6 6 0 0 1 11.9-1.2A4.5 4.5 0 0 1 21 13.5a4.5 4.5 0 0 1-4.5 4.5H6z" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">AWS Certification Course</h3>
             <div class="cert-platform">IntelliPaat Academy</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -868,12 +800,7 @@
       <div class="cert-card-wrapper" data-category="others">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">Python Programming Course</h3>
             <div class="cert-platform">Geekster</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -896,12 +823,7 @@
       <div class="cert-card-wrapper" data-category="others">
         <div class="cert-card-inner">
           <div class="cert-card-front">
-            <div class="cert-icon">
-              <svg viewBox="0 0 24 24" style="fill: none; stroke: var(--primary-light); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-            </div>
+            <div class="cert-check-badge">✓</div>
             <h3 class="cert-title">Accenture Developer & Technology Job Simulation</h3>
             <div class="cert-platform">Forage</div>
             <div class="flip-hint">Hover to flip ↺</div>
@@ -922,19 +844,7 @@
 
     </div>
 
-    <!-- 4. SKILLS SUMMARY -->
-    <div class="skills-summary reveal">
-      <h2>What These Certifications Represent</h2>
-      <div class="summary-grid">
-        <div class="summary-tag">Data Visualization</div>
-        <div class="summary-tag">Dashboard Design</div>
-        <div class="summary-tag">Data Cleaning</div>
-        <div class="summary-tag">Business Analysis</div>
-        <div class="summary-tag">Power BI</div>
-        <div class="summary-tag">Statistical Testing</div>
-        <div class="summary-tag">Actionable Reporting</div>
-        <div class="summary-tag">Python Scripting</div>
-      </div>
+    
     </div>
 
 
