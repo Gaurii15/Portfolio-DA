@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gauri Borse | Data Analyst Portfolio</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="keywords"
+    content="Gauri Borse, Data Analyst, Business Analyst, Power BI Portfolio, SQL Projects, Python Data Analysis, Data Visualization, AI Explorer">
+  <meta name="author" content="Gauri Borse">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta property="og:description"
+    content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta property="og:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta name="twitter:description"
+    content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="twitter:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <link rel="canonical" href="https://gauriborse.com/projects.html">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* Projects Page Header */
+    .projects-header {
+      padding: 60px 20px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .projects-header h1 {
+      font-size: 2.8rem;
+      letter-spacing: -1px;
+      margin: 0;
+      color: var(--text-light);
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+
+    .projects-header h1::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 80px;
+      height: 5px;
+      background: var(--gradient-btn);
+      border-radius: 3px;
+    }
+
+    .projects-header p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-top: 20px;
+      font-weight: 300;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    /* Grid Layout */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Project Card Styling */
+    .proj-card {
+      background: var(--gradient-card);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(192, 183, 232, 0.1);
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(192, 183, 232, 0.2);
+    }
+
+    .proj-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .proj-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .proj-card:hover .proj-img {
+      transform: scale(1.1);
+    }
+
+    .proj-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 7, 20, 0.85);
+      backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .proj-card:hover .proj-overlay {
+      opacity: 1;
+    }
+
+    /* Overlay Buttons */
+    .proj-overlay .btn {
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s ease;
+      padding: 12px 25px;
+      font-size: 0.85rem;
+    }
+
+    .proj-card:hover .proj-overlay .btn {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .proj-card:hover .proj-overlay .btn:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .proj-content {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .proj-title {
+      font-size: 1.4rem;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .proj-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .proj-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(192, 183, 232, 0.08);
+      color: var(--primary-light);
+      border: 1px solid rgba(192, 183, 232, 0.2);
+    }
+
+    .proj-card:hover .proj-overlay .btn:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-img">
+        <svg viewBox="0 0 100 100" fill="var(--gradient-btn)">
+          <circle cx="50" cy="50" r="40" stroke="url(#grad1)" stroke-width="8" fill="none" />
+          <rect x="28" y="45" width="10" height="25" rx="3" fill="url(#grad1)" />
+          <rect x="45" y="30" width="10" height="40" rx="3" fill="url(#grad1)" />
+          <rect x="62" y="15" width="10" height="55" rx="3" fill="url(#grad1)" />
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#8176AF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#C0B7E8;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div> GB
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="certifications.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <div class="container">
+
+      <!-- PAGE HEADER -->
+      <section class="projects-header reveal-left">
+        <h1>Projects</h1>
+        <p>Turning data into actionable insights and impactful stories. Browse through my recent analytics initiatives.
+        </p>
+      </section>
+
+      <!-- PROJECT GRID -->
+      <section class="projects-grid">
+
+        <!-- Card 1 -->
+        <div class="proj-card reveal">
+          <div class="proj-img-wrapper">
+            <img loading="lazy" src="assets/img/project/SaaS_proj.jpeg" class="proj-img" alt="SaaS Analysis">
+            <div class="proj-overlay">
+              <a href="project-saas.html" class="btn">View Case Study</a>
+              <a href="https://github.com/Gaurii15/SaaS_product_analytics_and_Churn_Analysis.git" target="_blank"
+                class="btn btn-outline">GitHub Repo</a>
+            </div>
+          </div>
+          <div class="proj-content">
+            <div>
+              <h3 class="proj-title">
+                SaaS Product Analytics & Churn Analysis
+              </h3>
+              <p class="proj-desc">Analyzed 147K+ records to build a 500-customer dataset, identifying ~22% churn driven
+                by low engagement and high errors.
+                • Developed 3 Power BI dashboards tracking ARR (4B) & MRR (330M) and built a customer health scoring
+                model
+                for retention insights.</p>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">Power BI</span>
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">SQL</span>
+              <span class="proj-tag">DAX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="proj-card reveal" style="transition-delay: 0.1s;">
+          <div class="proj-img-wrapper">
+            <img loading="lazy" src="assets/img/project/risk.jpeg" class="proj-img" alt="Shipment Risk Analysis">
+            <div class="proj-overlay">
+              <a href="project-shipment.html" class="btn">View Case Study</a>
+              <a href="https://github.com/Gaurii15/shipment-risk-analysis-powerbi.git" target="_blank"
+                class="btn btn-outline">GitHub Repo</a>
+            </div>
+          </div>
+          <div class="proj-content">
+            <div>
+              <h3 class="proj-title">Shipment Risk Analysis & Late Delivery Prediction</h3>
+              <p class="proj-desc">End-to-end supply chain analytics project using machine learning and Power BI to
+                predict late deliveries, identify high-risk shipments, and enable data-driven logistics optimization.
+              </p>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">Machine Learning</span>
+              <span class="proj-tag">Power BI</span>
+              <span class="proj-tag">Data Visualization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="proj-card reveal" style="transition-delay: 0.2s;">
+          <div class="proj-img-wrapper">
+            <img loading="lazy" src="assets/img/project/Churn2.jpg" class="proj-img" alt="Customer Churn">
+            <div class="proj-overlay">
+              <a href="project-consumer360.html" class="btn">View Case Study</a>
+              <a href="https://github.com/Gaurii15/Consumer360-Retail-Analytics-Customer-Segmentation-Churn-Analysis.git"
+                target="_blank" class="btn btn-outline">GitHub Repo</a>
+            </div>
+          </div>
+          <div class="proj-content">
+            <div>
+              <h3 class="proj-title">Consumer360 – Customer Segmentation & Churn Analysis</h3>
+              <p class="proj-desc">End-to-end retail analytics project leveraging SQL, Python, and Power BI to build a
+                Customer 360° view, perform RFM-based segmentation, and identify high-value and churn-risk customers.
+              </p>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">SQL</span>
+              <span class="proj-tag">Power BI</span>
+              <span class="proj-tag">Customer Segmentation</span>
+              <span class="proj-tag">RFM Analysis</span>
+              <span class="proj-tag">Churn Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="proj-card reveal">
+          <div class="proj-img-wrapper">
+            <img loading="lazy" src="assets/img/project/finance1.jpeg" class="proj-img"
+              alt="Finance Market Risk Volatility Dashboard">
+            <div class="proj-overlay">
+              <a href="project-finance.html" class="btn">View Case Study</a>
+              <a href="https://finance-risk-analysis-dashboard-gauriborse.streamlit.app/" target="_blank"
+                class="btn btn-outline" style="margin-top: 10px;">View Live</a>
+              <a href="https://github.com/Gaurii15/DA-internship-infotact-Finance---Market-Risk-Volatility-Dashboard.git"
+                target="_blank" class="btn btn-outline" style="margin-top: 10px;">GitHub Repo</a>
+            </div>
+          </div>
+          <div class="proj-content">
+            <div>
+              <h3 class="proj-title">Finance Market Risk Volatility Dashboard</h3>
+              <p class="proj-desc">This project is a Python-based quantitative finance analysis designed to evaluate
+                stock
+                market risk using statistical and probabilistic modeling techniques.The analysis focuses on
+                understanding
+                market volatility, potential price movements, and downside risk through financial data analysis and
+                simulation models.</p>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">Tableau</span>
+              <span class="proj-tag">Airflow</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="proj-card reveal">
+          <div class="proj-img-wrapper">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop"
+              class="proj-img" style="filter: hue-rotate(270deg);" alt="StudyBuddyAI">
+            <div class="proj-overlay">
+              <a href="Project-AiChatbot.html" class="btn">View Case Study</a>
+              <a href="https://studybuddyai-by-gauriborse-x4pagzvtaucurrgjehzqwn.streamlit.app/" target="_blank"
+                class="btn btn-outline" style="margin-top: 10px;">View Live</a>
+              <a href="https://github.com/Gaurii15/AI_study_assisted_chatbot.git" target="_blank"
+                class="btn btn-outline" style="margin-top: 10px;">GitHub Repo</a>
+            </div>
+          </div>
+          <div class="proj-content">
+            <div>
+              <h3 class="proj-title">StudyBuddyAI – AI-Powered Study Assistant</h3>
+              <p class="proj-desc">An intelligent AI learning platform that helps students interact with PDF study
+                materials through chatbot conversations, automated notes, quiz generation, and answer evaluation.</p>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">Streamlit</span>
+              <span class="proj-tag">Groq API</span>
+              <span class="proj-tag">Prompt Engineering</span>
+              <span class="proj-tag">PDF Processing</span>
+              <span class="proj-tag">AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="proj-card reveal" style="transition-delay: 0.1s;">
+          <div class="proj-img-wrapper">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
+              class="proj-img" style="filter: invert(1);" alt="Sales Analysis">
+            <div class="proj-overlay">
+              <a href="Project-SalesAnalysis.html" class="btn">View Case Study</a>
+              <a href="https://github.com/Gaurii15/Customer_Behavior_Sales_Analysis_SQL_Python_PowerBi.git"
+                target="_blank" class="btn btn-outline">GitHub Repo</a>
+            </div>
+          </div>
+          <div class="proj-content">
+            <div>
+              <h3 class="proj-title">Customer Behavior & Sales Analysis</h3>
+              <p class="proj-desc">An end-to-end analytics project that combines Python, PostgreSQL, and Power BI to
+                uncover customer purchasing patterns, sales trends, and revenue-driving business insights.</p>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">PostgreSQL</span>
+              <span class="proj-tag">Power BI</span>
+              <span class="proj-tag">ETL</span>
+              <span class="proj-tag">SQL</span>
+              <span class="proj-tag">Customer Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="proj-card reveal" style="transition-delay: 0.2s;">
+          <div class="proj-img-wrapper">
+            <img loading="lazy" src="assets/img/project/port.jpeg" class="proj-img" alt="Personal Portfolio Website">
+            <div class="proj-overlay">
+              <a href="index.html" class="btn">View Live</a>
+              <a href="https://github.com/Gaurii15" target="_blank" class="btn btn-outline"
+                style="margin-top: 10px;">GitHub Repo</a>
+            </div>
+          </div>
+          <div class="proj-content">
+            <div>
+              <h3 class="proj-title">Personal Portfolio Website</h3>
+              <p class="proj-desc">A personal portfolio website to showcase my projects, skills, interests and
+                achievements in data analytics. Built with HTML5, CSS3 and JavaScript.</p>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">HTML5</span>
+              <span class="proj-tag">CSS3</span>
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">Responsive Design</span>
+              <span class="proj-tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+  <footer>
+    <div class="container">
+      <p style="text-align:center; margin:20px 0;"><span
+          style="color: var(--text-muted); font-weight: 400; opacity: 0.8; font-size: 0.85rem; letter-spacing: 0.5px;">Designed
+          &amp; Coded by <span style="color: var(--primary-light); font-weight: 600;">Gauri</span></span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauri Borse | Data Analyst Portfolio</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="keywords" content="Gauri Borse, Data Analyst, Business Analyst, Power BI Portfolio, SQL Projects, Python Data Analysis, Data Visualization, AI Explorer">
+  <meta name="author" content="Gauri Borse">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta property="og:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta property="og:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta name="twitter:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="twitter:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <link rel="canonical" href="https://gauriborse.com/index.html">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    .hero {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      min-height: 85vh;
+      padding:  50px 0 20px 0;
+      gap: 50px;
+      position: relative;
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 720px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .hero-text h1 {
+      font-size: 3.8rem;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      font-weight: 400;
+      color: var(--primary-light);
+      min-height: 35px;
+      border-right: 2px solid var(--text-light);
+      padding-right: 5px;
+      display: inline-block;
+    }
+
+    .slogan {
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: var(--border-radius-pill);
+      background: rgba(192, 183, 232, 0.08);
+      color: var(--text-light);
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 5px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      border: 1px solid rgba(192, 183, 232, 0.2);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 550px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(192, 183, 232, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-links a::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-btn);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 0;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: var(--shadow-glow);
+      border-color: transparent;
+    }
+
+    .social-links a:hover::before {
+      opacity: 1;
+    }
+
+    .social-links svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--text-light);
+      z-index: 1;
+      transition: fill 0.3s;
+    }
+
+    .social-links a:hover svg {
+      fill: var(--bg-deep);
+    }
+
+    /* Achievements Grid - Premium Upgrade */
+    .achievements-container {
+      margin-top: 20px;
+      margin-bottom: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(192, 183, 232, 0.1);
+      width: 100%;
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .achievement-card {
+      background: rgba(192, 183, 232, 0.03);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(192, 183, 232, 0.1);
+      padding: 20px 10px;
+      border-radius: var(--border-radius-md);
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-8px);
+      background: rgba(192, 183, 232, 0.08);
+      border-color: var(--primary-light);
+      box-shadow: 0 10px 25px rgba(129, 118, 175, 0.3);
+    }
+
+    .ach-top {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 8px;
+      display: block;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .stat-count {
+      color: var(--primary-light);
+    }
+
+    .ach-bottom {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 400;
+      opacity: 0.6;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 1200px) {
+      .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .achievements-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Right Side - Image */
+    .hero-img-col {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 45px;
+      position: relative;
+      z-index: 1;
+      min-height: 500px;
+    }
+
+    .hero-img-col .circular-img-wrapper {
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid rgba(192, 183, 232, 0.2);
+      box-shadow: 0 0 50px rgba(129, 118, 175, 0.2);
+      position: relative;
+      z-index: 5;
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .hero-img-col .circular-img-wrapper:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 70px rgba(192, 183, 232, 0.4);
+      border-color: rgba(192, 183, 232, 0.5);
+    }
+
+    .hero-img-col .circular-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    /* Faded Translucent Words */
+    .bg-words-container {
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      right: -10%;
+      bottom: -10%;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bg-word {
+      position: absolute;
+      font-size: 4rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: rgba(192, 183, 232, 0.05);
+      filter: blur(3px);
+      animation: float-words 15s ease-in-out infinite alternate;
+      letter-spacing: 10px;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .bg-word:nth-child(1) {
+      top: 10%;
+      left: 5%;
+      font-size: 5rem;
+      animation-duration: 20s;
+    }
+
+    .bg-word:nth-child(2) {
+      top: 75%;
+      left: -5%;
+      font-size: 3rem;
+      animation-duration: 18s;
+      animation-delay: 2s;
+    }
+
+    .bg-word:nth-child(3) {
+      top: 25%;
+      right: -5%;
+      font-size: 4.5rem;
+      animation-duration: 22s;
+      animation-delay: 1s;
+    }
+
+    .bg-word:nth-child(4) {
+      bottom: 15%;
+      right: 5%;
+      font-size: 5.5rem;
+      animation-duration: 19s;
+      animation-delay: 3s;
+      filter: blur(4px);
+    }
+
+    .bg-word:nth-child(5) {
+      top: 45%;
+      left: -15%;
+      font-size: 6rem;
+      animation-duration: 25s;
+      animation-delay: 4s;
+      filter: blur(5px);
+    }
+
+    .bg-word:nth-child(6) {
+      bottom: 40%;
+      right: -15%;
+      font-size: 4rem;
+      animation-duration: 17s;
+      animation-delay: 1.5s;
+      opacity: 0.03;
+    }
+
+    .bg-word:nth-child(7) {
+      top: 5%;
+      right: 30%;
+      font-size: 3.5rem;
+      animation-duration: 21s;
+      animation-delay: 5s;
+    }
+
+    @keyframes float-words {
+      0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+
+      100% {
+        transform: translate(30px, -30px) rotate(3deg) scale(1.05);
+      }
+    }
+
+    /* Initial Fade in animation for bg-words */
+    .fade-in-slow {
+      opacity: 0;
+      animation: fadeInSLow 2s ease forwards 0.5s;
+    }
+
+    @keyframes fadeInSLow {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Floating Mini Cards */
+    .mini-card {
+      position: absolute;
+      background: rgba(20, 18, 28, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 12px 20px;
+      border-radius: var(--border-radius-pill);
+      border: 1px solid rgba(192, 183, 232, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-5px) scale(1.05);
+      border-color: rgba(192, 183, 232, 0.4);
+    }
+
+    .mini-card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gradient-btn);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(129, 118, 175, 0.5);
+    }
+
+    .mini-card-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--bg-deep);
+    }
+
+    .mini-card-content h4 {
+      font-size: 1rem;
+      color: var(--text-light);
+      margin-bottom: 2px;
+    }
+
+    .mini-card-content p {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--primary-light);
+      margin: 0;
+    }
+
+    .card-1 {
+      top: 8%;
+      right: -20px;
+      animation-duration: 6s;
+    }
+
+    .card-2 {
+      bottom: 15%;
+      left: -30px;
+      animation-duration: 7s;
+    }
+
+    .card-3 {
+      bottom: 5%;
+      right: 20px;
+      animation-duration: 5s;
+    }
+
+    @media (max-width: 992px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        padding-top: 20px;
+      }
+
+      .hero-text {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-img-col {
+        justify-content: center;
+        margin-top: 60px;
+        width: 100%;
+        min-height: 400px;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .mini-stats-row {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .card-1,
+      .card-2,
+      .card-3 {
+        display: none;
+      }
+
+      .hero-text h1 {
+        font-size: 2.8rem;
+        position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+    .hero-text h1::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 80px;
+      height: 5px;
+      background: var(--gradient-btn);
+      border-radius: 3px;
+    }
+
+
+      .bg-words-container {
+        display: none;
+      }
+
+      .hero-img-col .circular-img-wrapper {
+        width: 320px;
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+        <a href="index.html" class="logo">
+      <div class="logo-img">
+        <svg viewBox="0 0 100 100" fill="var(--gradient-btn)">
+          <circle cx="50" cy="50" r="40" stroke="url(#grad1)" stroke-width="8" fill="none" />
+          <rect x="28" y="45" width="10" height="25" rx="3" fill="url(#grad1)" />
+          <rect x="45" y="30" width="10" height="40" rx="3" fill="url(#grad1)" />
+          <rect x="62" y="15" width="10" height="55" rx="3" fill="url(#grad1)" />
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#8176AF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#C0B7E8;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div> GB
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="certifications.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <div class="container">
+    <section class="hero">
+      <div class="hero-text reveal-left">
+        <div class="slogan">THINK &bull; BUILD &bull; IMPROVE</div>
+        <h1>GAURI BORSE</h1>
+        <div class="subtitle" id="typing-text"></div>
+        <p class="hero-desc">
+          Transforming complex raw data into strategic insights.<br> Dedicated to operational efficiency through
+          rigorous analytics and AI-driven predictive modeling.
+        </p>
+        <div class="hero-actions">
+          <a href="projects.html" class="btn">VIEW PROJECTS</a>
+          <a href="resume.html" class="btn btn-outline">RESUME</a>
+        </div>
+
+        <div class="social-links reveal" style="transition-delay: 0.3s;">
+          <a href="https://github.com/Gaurii15" aria-label="GitHub" target="_blank">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/gauri-borse-data-analyst?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="mailto:borsegauri1509@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/_gauriborse_15" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-img-col reveal-right fade-in-slow">
+        <!-- Faded Translucent Background Words -->
+        <div class="bg-words-container">
+          <span class="bg-word">Analysis</span>
+          <span class="bg-word">Insights</span>
+          <span class="bg-word">Impact</span>
+          <span class="bg-word">Data</span>
+          <span class="bg-word">Models</span>
+          <span class="bg-word">Trends</span>
+          <span class="bg-word">Dashboard</span>
+        </div>
+
+        <!-- Floating mini cards -->
+        <div class="mini-card card-1 float-anim">
+          <div class="mini-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 17.292l-4.5-4.364 1.857-1.858 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.643z" />
+            </svg>
+          </div>
+          <div class="mini-card-content">
+            <h4>Insights</h4>
+            <p>Generated</p>
+          </div>
+        </div>
+
+        <div class="mini-card card-2 float-anim">
+          <div class="mini-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18 10v-4c0-3.313-2.687-6-6-6s-6 2.687-6 6v4h-3v14h18v-14h-3zm-10-4c0-2.206 1.794-4 4-4s4 1.794 4 4v4h-8v-4zm5 11.259v2.741h-2v-2.741c-.596-.346-1-.984-1-1.716 0-1.104.896-2 2-2s2 .896 2 2c0 .732-.404 1.37-1 1.716z" />
+            </svg>
+          </div>
+          <div class="mini-card-content">
+            <h4>Dashboards</h4>
+            <p>Created</p>
+          </div>
+        </div>
+
+        <div class="mini-card card-3 float-anim">
+          <div class="mini-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21.698 10.658l2.302 1.342-12.002 7-11.998-7 2.301-1.342 9.697 5.658 9.7-5.658zm-9.7 10.657l-9.697-5.658-2.301 1.343 11.998 7 12.002-7-2.302-1.342-9.7 5.657zm12.002-14.315l-12.002-7-11.998 7 11.998 7 12.002-7z" />
+            </svg>
+          </div>
+          <div class="mini-card-content">
+            <h4>Data Driven</h4>
+            <p>Decisions</p>
+          </div>
+        </div>
+
+        <div class="circular-img-wrapper float-anim" style="animation-duration: 8s;">
+          <img loading="lazy" src="assets/img/self/corporateimage.jpeg" alt="Gauri Profile Image">
+        </div>
+      </div>
+    </section>
+
+    <div class="achievements-container reveal" style="transition-delay: 0.5s;">
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <span class="ach-top"><span class="stat-count" data-target="147" data-suffix="K+">0</span> ROWS</span>
+          <span class="ach-bottom">DATA ANALYZED</span>
+        </div>
+        <div class="achievement-card">
+          <span class="ach-top"><span class="stat-count" data-target="4" data-suffix="+">0</span> PROJECTS</span>
+          <span class="ach-bottom">END-TO-END ANALYTICS</span>
+        </div>
+        <div class="achievement-card">
+          <span class="ach-top">INSIGHT DELIVERY</span>
+          <span class="ach-bottom">DATA → DECISIONS</span>
+        </div>
+        <div class="achievement-card">
+          <span class="ach-top">AI WORKFLOW</span>
+          <span class="ach-bottom">AUTOMATION & PRODUCTIVITY</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </main>
+  <footer>
+    <div class="container">
+      <p style="text-align:center; margin:20px 0;"><span style="color: var(--text-muted); font-weight: 400; opacity: 0.8; font-size: 0.85rem; letter-spacing: 0.5px;">Designed &amp; Coded by <span style="color: var(--primary-light); font-weight: 600;">Gauri</span></span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

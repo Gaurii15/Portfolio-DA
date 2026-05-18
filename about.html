@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gauri Borse | Data Analyst Portfolio</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="keywords"
+    content="Gauri Borse, Data Analyst, Business Analyst, Power BI Portfolio, SQL Projects, Python Data Analysis, Data Visualization, AI Explorer">
+  <meta name="author" content="Gauri Borse">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta property="og:description"
+    content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta property="og:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta name="twitter:description"
+    content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="twitter:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <link rel="canonical" href="https://gauriborse.com/about.html">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* ABOUT HEADER SECTION */
+    .about-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      gap: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .about-header-text {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .about-header-text h1 {
+      font-size: 2.8rem;
+      letter-spacing: -1px;
+      margin: 0;
+      color: var(--text-light);
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      align-self: flex-start;
+      padding-bottom: 12px;
+    }
+
+    .about-header-text h1::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 80px;
+      height: 5px;
+      background: var(--gradient-btn);
+      border-radius: 3px;
+    }
+
+    .about-header-visual {
+      width: 140px;
+      height: 140px;
+      filter: drop-shadow(0 0 15px rgba(58, 96, 233, 0.4));
+      animation: neon-float 5s ease-in-out infinite alternate;
+      flex-shrink: 0;
+    }
+
+    .about-header-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes neon-float {
+      0% {
+        transform: translateY(0px);
+        filter: drop-shadow(0 0 15px rgba(58, 96, 233, 0.4));
+      }
+
+      100% {
+        transform: translateY(-15px);
+        filter: drop-shadow(0 0 30px rgba(129, 118, 175, 0.8));
+      }
+    }
+
+    /* Background layered elements */
+    .bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(129, 118, 175, 0.15) 0%, transparent 70%);
+      filter: blur(40px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .shape-1 {
+      width: 600px;
+      height: 600px;
+      top: -100px;
+      left: -150px;
+    }
+
+    .shape-2 {
+      width: 500px;
+      height: 500px;
+      bottom: -100px;
+      right: 20%;
+      background: radial-gradient(circle, rgba(58, 96, 233, 0.1) 0%, transparent 70%);
+    }
+
+    /* SUMMARY SECTION */
+    .about-summary {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      padding: 30px 20px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+      border-radius: var(--border-radius-lg);
+      margin-bottom: 60px;
+      border-left: 2px solid var(--primary-glow);
+    }
+
+    .profile-img-container {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid rgba(192, 183, 232, 0.6);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.4s ease;
+      flex-shrink: 0;
+    }
+
+    .profile-img-container:hover {
+      transform: scale(1.08);
+      box-shadow: 0 15px 40px rgba(129, 118, 175, 0.5);
+    }
+
+    .profile-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .summary-text {
+      flex: 1;
+    }
+
+    .summary-text p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* SPLIT CONTENT (Tech vs Journey) */
+    .split-layout {
+      display: grid;
+      grid-template-columns: 55% 40%;
+      gap: 5%;
+      margin: 80px 0;
+      align-items: start;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* TECH PROFICIENCY */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .tech-card {
+      background: var(--gradient-card);
+      border-radius: var(--border-radius-lg);
+      padding: 35px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(192, 183, 232, 0.1);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(192, 183, 232, 0.2);
+    }
+
+    .tech-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .skill-bar-wrapper {
+      margin-bottom: 25px;
+    }
+
+    .skill-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .skill-meta .skill-level {
+      font-weight: 400;
+      color: rgba(192, 183, 232, 0.7);
+      font-size: 0.85rem;
+    }
+
+    .progress-bg {
+      background: rgba(0, 0, 0, 0.4);
+      height: 6px;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--gradient-btn);
+      width: 0%;
+      border-radius: 10px;
+      transition: width 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      box-shadow: 0 0 10px rgba(129, 118, 175, 0.8);
+    }
+
+    .exploring-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tag-badge {
+      padding: 8px 16px;
+      background: rgba(192, 183, 232, 0.08);
+      border-radius: var(--border-radius-pill);
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid rgba(192, 183, 232, 0.2);
+      transition: all 0.3s;
+      color: var(--text-light);
+    }
+
+    .tech-card:hover .tag-badge {
+      background: rgba(192, 183, 232, 0.15);
+      border-color: rgba(192, 183, 232, 0.4);
+    }
+
+    /* JOURNEY TIMELINE */
+    .timeline {
+      position: relative;
+      margin: 0;
+      padding-left: 30px;
+      border-left: 2px solid rgba(192, 183, 232, 0.15);
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--gradient-btn);
+      transform-origin: top;
+      transform: scaleY(0);
+      transition: transform 2s ease;
+      box-shadow: 0 0 15px rgba(129, 118, 175, 0.8);
+    }
+
+    .timeline.active::before {
+      transform: scaleY(1);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.6s ease;
+    }
+
+    .timeline-item.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 5px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--bg-deep);
+      border: 2px solid var(--primary-light);
+      transition: all 0.5s ease;
+      z-index: 2;
+    }
+
+    .timeline.active .timeline-item.active::before {
+      background: var(--primary-light);
+      box-shadow: 0 0 15px var(--primary-light);
+    }
+
+    .timeline-date {
+      color: var(--primary-glow);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+      letter-spacing: 1px;
+    }
+
+    .timeline-title {
+      font-size: 1.4rem;
+      color: var(--text-light);
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .timeline-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 12px;
+      display: block;
+      font-style: italic;
+    }
+
+    .timeline-item p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* BOTTOM GRIDS */
+    .bottom-grids {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 60px;
+    }
+
+    .fact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      margin-bottom: 15px;
+      margin-right: 10px;
+      background: rgba(33, 30, 46, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(192, 183, 232, 0.15);
+      border-radius: var(--border-radius-pill);
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .fact-pill:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      border-color: var(--primary-light);
+      background: rgba(129, 118, 175, 0.2);
+    }
+
+    @media (max-width: 900px) {
+      .split-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-grids {
+        grid-template-columns: 1fr;
+      }
+
+      .about-header {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        padding: 40px 10px;
+      }
+
+      .about-header-text {
+        align-items: center;
+      }
+
+      .about-header-text h1 {
+        font-size: 2.8rem;
+      }
+
+      .about-header-visual {
+        margin-top: 20px;
+      }
+
+      .about-summary {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-img">
+        <svg viewBox="0 0 100 100" fill="var(--gradient-btn)">
+          <circle cx="50" cy="50" r="40" stroke="url(#grad1)" stroke-width="8" fill="none" />
+          <rect x="28" y="45" width="10" height="25" rx="3" fill="url(#grad1)" />
+          <rect x="45" y="30" width="10" height="40" rx="3" fill="url(#grad1)" />
+          <rect x="62" y="15" width="10" height="55" rx="3" fill="url(#grad1)" />
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#8176AF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#C0B7E8;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div> GB
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="certifications.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <div class="container">
+
+      <!-- TOP HEADER SECTION -->
+      <section class="about-header">
+        <div class="about-header-text reveal-left">
+          <h1>About Me</h1>
+        </div>
+
+        <div class="about-header-visual reveal-right">
+          <!-- Bar Graph with Magnifying Glass SVG -->
+          <svg viewBox="0 0 100 100" fill="none"
+            style="width: 100%; height: 100%; filter: drop-shadow(0 0 10px rgba(192, 183, 232, 0.4));">
+
+            <!-- Outer border/cutout effect with black backdrop to hide bars behind the glass -->
+            <!-- Graph bars -->
+            <rect x="12" y="45" width="18" height="40" rx="3" fill="url(#neonPurple)" />
+            <rect x="36" y="25" width="18" height="60" rx="3" fill="url(#neonPurple)" />
+            <rect x="60" y="10" width="18" height="75" rx="3" fill="url(#neonPurple)" />
+
+            <!-- Magnifying Glass Backdrop (to block bars behind it) -->
+            <circle cx="60" cy="60" r="22" stroke="#0A0714" stroke-width="8" fill="#0A0714" />
+            <path d="M74 74 L92 92" stroke="#0A0714" stroke-width="14" stroke-linecap="round" />
+
+            <!-- Magnifying Glass Glow/Lines -->
+            <circle cx="60" cy="60" r="18" stroke="url(#neonPink)" stroke-width="4" fill="rgba(255, 0, 170, 0.15)" />
+            <path d="M74 74 L88 88" stroke="url(#neonPink)" stroke-width="8" stroke-linecap="round" />
+
+            <defs>
+              <linearGradient id="neonPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#C0B7E8" />
+                <stop offset="100%" stop-color="#8176AF" />
+              </linearGradient>
+              <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF55FF" />
+                <stop offset="100%" stop-color="#FF00AA" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </section>
+
+      <!-- SUMMARY SECTION -->
+      <section class="about-summary reveal">
+        <div class="profile-img-container">
+          <img loading="lazy" src="assets/img/self/about_self.png" alt="Gauri Borse">
+        </div>
+        <div class="summary-text">
+          <p>I am a detail-oriented Data Analyst focused on turning complex datasets into strategic, actionable business
+            insights. With a strong background in operational efficiency, I specialize in rigorous analytics and
+            AI-driven
+            predictive modeling to unlock growth.</p>
+        </div>
+      </section>
+
+      <!-- MAIN SPLIT CONTENT -->
+      <div class="split-layout">
+
+        <!-- LEFT SIDE: TECH PROFICIENCY -->
+        <div class="split-left">
+          <h2 class="section-title reveal">Technical Proficiency</h2>
+          <div class="tech-grid">
+
+            <div class="tech-card reveal">
+              <h3>Data Analysis</h3>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Python</span><span class="skill-level">Proficient</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="85%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>SQL</span><span class="skill-level">Proficient</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="90%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Excel</span><span class="skill-level">Advanced</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="95%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-card reveal" style="transition-delay: 0.1s;">
+              <h3>Data Visualization</h3>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Power BI</span><span class="skill-level">Proficient</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="85%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Tableau</span><span class="skill-level">Learning</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="50%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Matplotlib / Seaborn</span><span class="skill-level">Proficient</span>
+                </div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="80%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-card reveal" style="transition-delay: 0.2s;">
+              <h3>AI & Productivity Tools</h3>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Chatgpt</span><span class="skill-level">Advanced</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="95%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Gemini</span><span class="skill-level">Advanced</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="95%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Copilot</span><span class="skill-level">Average</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="65%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-card reveal" style="transition-delay: 0.2s;">
+              <h3>AI & Productivity Tools</h3>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Gamma/Canva</span><span class="skill-level">Advanced</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="95%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Cursor/Antigravity</span><span class="skill-level">Proficient</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="85%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>NotebookLm</span><span class="skill-level">Average</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="65%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-card reveal" style="transition-delay: 0.2s;">
+              <h3>Tools</h3>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Git & GitHub</span><span class="skill-level">Proficient</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="85%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Jupyter Notebook</span><span class="skill-level">Advanced</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="95%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Microsoft Fabric</span><span class="skill-level">Learning</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="35%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-card reveal" style="transition-delay: 0.2s;">
+              <h3>Python Libraries</h3>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Pandas</span><span class="skill-level">Proficient</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="85%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Numpy</span><span class="skill-level">Proficient</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="85%"></div>
+                </div>
+              </div>
+              <div class="skill-bar-wrapper">
+                <div class="skill-meta"><span>Streamlit</span><span class="skill-level">Proficient</span></div>
+                <div class="progress-bg">
+                  <div class="progress-fill" data-width="85%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-card reveal" style="transition-delay: 0.3s;">
+              <h3>Exploring</h3>
+              <div class="exploring-tags">
+                <span class="tag-badge">Machine Learning Basics</span>
+                <span class="tag-badge">Predictive Modeling</span>
+                <span class="tag-badge">Data Science Concepts</span>
+                <span class="tag-badge">AI Automation</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDE: JOURNEY TIMELINE -->
+        <div class="split-right">
+          <h2 class="section-title reveal">Journey</h2>
+          <div class="timeline reveal">
+
+            <div class="timeline-item">
+              <span class="timeline-date">Nov 2025 – Jan 2026</span>
+              <h4 class="timeline-title">Data Analyst</h4>
+              <span class="timeline-subtitle">Infotact Solutions, Bangalore(Remote)</span>
+              <p>Collaborated with analytics teams to clean, process, and analyze retail sales data using SQL, Excel,
+                and
+                Google Sheets, uncovering revenue trends and generating actionable reports and dashboards.</p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">2025-26</span>
+              <h4 class="timeline-title">Leadership</h4>
+              <span class="timeline-subtitle">Internship/College</span>
+              <p>Led teams during my data analyst internship and college events, coordinating tasks and ensuring timely
+                delivery.</p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">July 2025 – Sept 2025</span>
+              <h4 class="timeline-title">Data Management Operator</h4>
+              <span class="timeline-subtitle">LaptopHub.in, Delhi (Remote)</span>
+              <p>Cleaned and managed product datasets using Excel and Google Sheets, ensuring accuracy and consistency.
+                Optimized SEO-friendly product content with strong attention to detail.</p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">June 2025</span>
+              <h4 class="timeline-title">Deloitte Data Analytics Job Simulation (Virtual)</h4>
+              <span class="timeline-subtitle">Forage</span>
+              <p>Completed self-paced tasks simulating real client work, including data analysis, building interactive
+                dashboards in Tableau to
+                explore telemetry data, forensic investigations, and delivering insights to clients</p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">2025</span>
+              <h4 class="timeline-title">Earned Certification</h4>
+              <span class="timeline-subtitle">Oracle University</span>
+              <p>Officially earned the Oracle Cloud Infrastructure 2025 certified Data Science Professional
+                Certification
+              </p>
+            </div>
+
+
+            <div class="timeline-item">
+              <span class="timeline-date">2025</span>
+              <h4 class="timeline-title">Projects Development</h4>
+              <span class="timeline-subtitle">Self-paced</span>
+              <p>Developed Data Analytics Projecs and explored new technologies</p>
+            </div>
+
+
+            <div class="timeline-item">
+              <span class="timeline-date">2023-present</span>
+              <h4 class="timeline-title">Pursuing Computer Engineering</h4>
+              <span class="timeline-subtitle">Savitribai Phule Pune university</span>
+              <p>Built strong foundations in DSA, Algorithms, DBMS, Analytics and software development. Worked on data
+                analytics and web-based projects with real-world applications. Focused on clean code practices and
+                continuous learning mindset</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM GRIDS (Soft Skills & Facts) -->
+      <div class="bottom-grids">
+
+        <div class="reveal-left">
+          <h2 class="section-title">Soft Skills</h2>
+          <div>
+            <span class="fact-pill">🤝 Team Collaboration <span style="color:var(--primary-glow)">Strong</span></span>
+            <span class="fact-pill">🧩 Problem Solving <span style="color:var(--primary-glow)">Proficient</span></span>
+            <span class="fact-pill">🗣 Communication <span style="color:var(--primary-glow)">Proficient</span></span>
+            <span class="fact-pill">🧠 Analytical Thinking <span
+                style="color:var(--primary-glow)">Proficient</span></span>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <h2 class="section-title">Quick Facts</h2>
+          <div>
+            <span class="fact-pill">💻 TE Computer Engineering</span>
+            <span class="fact-pill">🚀 Fast Learner</span>
+            <span class="fact-pill">🔍 Curious</span>
+            <span class="fact-pill">🧘‍♀️ Yoga</span>
+            <span class="fact-pill">🌅 Early Riser</span>
+            <span class="fact-pill">✍️ Content Writing</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div> <!-- End container -->
+
+  </main>
+  <footer>
+    <div class="container">
+      <p style="text-align:center; margin:20px 0;"><span
+          style="color: var(--text-muted); font-weight: 400; opacity: 0.8; font-size: 0.85rem; letter-spacing: 0.5px;">Designed
+          &amp; Coded by <span style="color: var(--primary-light); font-weight: 600;">Gauri</span></span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauri Borse | Data Analyst Portfolio</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="keywords" content="Gauri Borse, Data Analyst, Business Analyst, Power BI Portfolio, SQL Projects, Python Data Analysis, Data Visualization, AI Explorer">
+  <meta name="author" content="Gauri Borse">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta property="og:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta property="og:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta name="twitter:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="twitter:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <link rel="canonical" href="https://gauriborse.com/resume.html">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* LAYOUT: SPLIT */
+    .resume-container {
+      display: flex;
+      gap: 50px;
+      margin: 40px auto 80px;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    /* LEFT : 30-35% */
+    .resume-left {
+      width: 32%;
+      position: sticky;
+      top: 40px;
+      min-height: 85vh;
+      /* Increased height slightly */
+      background: var(--gradient-card);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px 30px;
+      border-radius: var(--border-radius-lg);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(192, 183, 232, 0.1);
+      z-index: 10;
+    }
+
+    .left-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .left-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 50px;
+      height: 3px;
+      background: var(--gradient-btn);
+      border-radius: 3px;
+      transition: width 0.6s ease;
+    }
+
+    .resume-left:hover .left-title::after {
+      width: 80px;
+    }
+
+    .left-summary {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      margin-top: 15px;
+      font-weight: 300;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn-download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px;
+      border-radius: var(--border-radius-pill);
+      background: rgba(10, 7, 20, 0.6);
+      color: var(--text-light);
+      font-weight: 600;
+      border: 1px solid rgba(192, 183, 232, 0.2);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-download:hover {
+      background: var(--gradient-btn);
+      color: var(--bg-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(129, 118, 175, 0.3);
+      border-color: transparent;
+    }
+
+    .btn-download svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* RIGHT: 65-70% */
+    .resume-right {
+      width: 68%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .section-block {
+      background: var(--gradient-card);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: var(--border-radius-lg);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(192, 183, 232, 0.15);
+      transition: all 0.4s ease;
+    }
+
+    .section-block:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      border-color: rgba(192, 183, 232, 0.3);
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(192, 183, 232, 0.15);
+      padding-bottom: 15px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--primary-light);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--primary-light);
+    }
+
+    /* Grid for Chips */
+    .chip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chip {
+      background: rgba(33, 30, 46, 0.4);
+      border: 1px solid rgba(192, 183, 232, 0.15);
+      color: var(--text-light);
+      padding: 10px 18px;
+      border-radius: var(--border-radius-pill);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .chip:hover {
+      background: rgba(192, 183, 232, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+      border-color: var(--primary-light);
+    }
+
+    /* Concept / Tech cards */
+    .concept-chip {
+      background: rgba(129, 118, 175, 0.15);
+      border: 1px solid rgba(192, 183, 232, 0.3);
+      color: var(--primary-light);
+      padding: 10px 18px;
+      border-radius: var(--border-radius-pill);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .concept-chip:hover {
+      background: rgba(129, 118, 175, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(129, 118, 175, 0.5);
+      border-color: var(--primary-light);
+    }
+
+    /* Experience Card */
+    .exp-item {
+      padding: 25px;
+      border: 1px solid rgba(192, 183, 232, 0.05);
+      border-radius: var(--border-radius-lg);
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.015);
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-item:hover {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(192, 183, 232, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .exp-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .exp-title strong {
+      color: var(--primary-light);
+    }
+
+    .exp-meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+      font-weight: 400;
+      opacity: 0.8;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .exp-tools {
+      font-size: 0.85rem;
+      color: var(--primary-light);
+      margin-bottom: 15px;
+      font-weight: 600;
+      background: rgba(129, 118, 175, 0.1);
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(192, 183, 232, 0.1);
+    }
+
+    .exp-bullets {
+      padding-left: 20px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .exp-bullets li {
+      margin-bottom: 8px;
+    }
+
+    /* Certifications */
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-radius: var(--border-radius-md);
+      border: 1px solid rgba(192, 183, 232, 0.05);
+      background: rgba(33, 30, 46, 0.5);
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--primary-light);
+    }
+
+    .cert-item:hover {
+      background: rgba(192, 183, 232, 0.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transform: translateX(5px);
+    }
+
+    .cert-name {
+      font-weight: 600;
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+
+    .cert-plat {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .cert-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      text-decoration: none;
+      padding: 8px 16px;
+      background: rgba(129, 118, 175, 0.1);
+      border-radius: var(--border-radius-pill);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(192, 183, 232, 0.2);
+    }
+
+    .cert-link:hover {
+      background: var(--gradient-btn);
+      color: var(--bg-deep);
+      box-shadow: 0 4px 10px rgba(129, 118, 175, 0.4);
+      border-color: transparent;
+    }
+
+    .view-all-certs {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      text-decoration: none;
+      position: relative;
+    }
+
+    .view-all-certs::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: var(--primary-light);
+      transition: width 0.3s;
+    }
+
+    .view-all-certs:hover {
+      text-decoration: none;
+    }
+
+    .view-all-certs:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      .resume-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .resume-left {
+        width: 100%;
+        position: relative;
+        top: 0;
+        z-index: 1;
+        min-height: auto;
+      }
+
+      .resume-right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-img">
+        <svg viewBox="0 0 100 100" fill="var(--gradient-btn)">
+          <circle cx="50" cy="50" r="40" stroke="url(#grad1)" stroke-width="8" fill="none" />
+          <rect x="28" y="45" width="10" height="25" rx="3" fill="url(#grad1)" />
+          <rect x="45" y="30" width="10" height="40" rx="3" fill="url(#grad1)" />
+          <rect x="62" y="15" width="10" height="55" rx="3" fill="url(#grad1)" />
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#8176AF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#C0B7E8;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div> GB
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="certifications.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <div class="container">
+    <div class="resume-container">
+
+      <!-- LEFT SECTION (STATIC/STICKY) -->
+      <aside class="resume-left reveal-left">
+        <h1 class="left-title">Resume</h1>
+        <p class="left-summary">Aspiring Data Analyst skilled in Power BI, Python, SQL, and Excel. Passionate about
+          transforming raw data into meaningful insights and impactful dashboards.</p>
+
+        <div class="btn-group">
+          <a href="assets/img/certificates/Resume/GAURI BORSE1.pdf" target="_blank" class="btn-download">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+            </svg>
+            Download Resume
+          </a>
+          <a href="assets/img/certificates/Resume/GAURI BORSE1.pdf" target="_blank" class="btn-download">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+            </svg>
+            Download CV
+          </a>
+        </div>
+      </aside>
+
+      <!-- RIGHT SECTION (SCROLLABLE CONTENT) -->
+      <div class="resume-right">
+
+        <!-- 1. TECHNICAL SKILLS -->
+        <section class="section-block reveal">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="chip-grid">
+            <span class="chip">Python</span>
+            <span class="chip">SQL (PostgreSQL, MySQL)</span>
+            <span class="chip">Advanced Excel</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Data Cleaning & Data Wrangling</span>
+            <span class="chip">Exploratory Data Analysis (EDA)</span>
+            <span class="chip">Statistical Analysis</span>
+            <span class="chip">ETL Pipelines</span>
+            <span class="chip">Data Visualization</span>
+            <span class="chip">Machine Learning Basics</span>
+            <span class="chip">Product Analytics</span>
+            <span class="chip">Business Analytics</span>
+            <span class="chip">KPI Reporting</span>
+            <span class="chip">Dashboard Development</span>
+            <span class="chip">Data Storytelling</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+          </div>
+        </section>
+
+        <!-- 2. TOOLS & TECHNOLOGIES -->
+        <section class="section-block reveal">
+          <h2 class="section-title">Tools & Technologies</h2>
+          <div class="chip-grid">
+            <span class="chip">Power BI (DAX, Power Query, Data Modeling)</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Streamlit</span>
+            <span class="chip">Git & GitHub</span>
+            <span class="chip">Oracle Cloud Infrastructure (OCI)</span>
+            <span class="chip">AWS Cloud</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">Google Sheets</span>
+            <span class="chip">MS Excel</span>
+            <span class="chip">Google Workspace</span>
+            <span class="chip">Microsoft Office 365</span>
+            <span class="chip">Jupyter Notebook</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">Kaggle</span>
+            <span class="chip">Canva</span>
+          </div>
+        </section>
+
+        <!-- 3. PYTHON LIBRARIES -->
+        <section class="section-block reveal">
+          <h2 class="section-title">Python Libraries</h2>
+          <div class="chip-grid">
+            <span class="chip">Pandas</span>
+            <span class="chip">NumPy</span>
+            <span class="chip">Matplotlib</span>
+            <span class="chip">Seaborn</span>
+            <span class="chip">Scikit-learn</span>
+            <span class="chip">Streamlit</span>
+          </div>
+        </section>
+
+        <!-- 4. ANALYTICAL & BUSINESS CONCEPTS -->
+        <section class="section-block reveal">
+          <h2 class="section-title">Analytical & Business Concepts</h2>
+          <div class="chip-grid">
+            <span class="concept-chip">RFM Analysis</span>
+            <span class="concept-chip">Business Analysis</span>
+            <span class="concept-chip">Customer Segmentation</span>
+            <span class="concept-chip">Cohort Analysis</span>
+            <span class="concept-chip">Product Analytics</span>
+            <span class="concept-chip">KPI & Metrics Analysis</span>
+            <span class="concept-chip">Revenue Analysis</span>
+            <span class="concept-chip">Risk Analysis</span>
+            <span class="concept-chip">Forecasting</span>
+            <span class="concept-chip">Business Intelligence (BI)</span>
+            <span class="concept-chip">Data-Driven Decision Making</span>
+            <span class="concept-chip">Customer Retention Analysis</span>
+          </div>
+        </section>
+
+        <!-- 5. CS FUNDAMENTALS -->
+        <section class="section-block reveal">
+          <h2 class="section-title">CS Fundamentals</h2>
+          <div class="chip-grid">
+            <span class="chip">DBMS</span>
+            <span class="chip">Operating Systems</span>
+            <span class="chip">Computer Networks</span>
+            <span class="chip">Object-Oriented Programming (OOP)</span>
+            <span class="chip">Data Structures & Algorithms</span>
+            <span class="chip">Software Engineering</span>
+            <span class="chip">SDLC Basics</span>
+            <span class="chip">Basics of Cloud Computing</span>
+            <span class="chip">Web Development</span>
+          </div>
+        </section>
+
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+          <!-- 6. EDUCATION -->
+          <section class="section-block reveal" style="flex: 1; min-width: 250px;">
+            <h2 class="section-title">Education</h2>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-light); line-height: 1.4;">
+                Bachelor of Engineering in Computer Engineering
+              </div>
+              <div style="font-size: 0.9rem; color: var(--primary-light); font-weight: 600;">
+                2023 – 2027
+              </div>
+              <div style="font-size: 1rem; color: rgba(255, 255, 255, 0.9); font-weight: 500;">
+                Savitribai Phule Pune University
+              </div>
+              <div style="font-size: 0.9rem; color: var(--text-muted);">
+                Pune, India
+              </div>
+              <div style="margin-top: 10px;">
+                <span style="font-size: 0.9rem; color: var(--primary-light); font-weight: 600; background: rgba(129, 118, 175, 0.1); padding: 6px 12px; border-radius: 4px; border: 1px solid rgba(192, 183, 232, 0.1); display: inline-block;">
+                  CGPA: 8.5
+                </span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 7. LANGUAGES -->
+          <section class="section-block reveal" style="flex: 1; min-width: 250px;">
+            <h2 class="section-title">Languages</h2>
+            <div class="chip-grid">
+              <span class="chip">English (Professional)</span>
+              <span class="chip">Hindi (Fluent)</span>
+              <span class="chip">Marathi (Native)</span>
+            </div>
+          </section>
+        </div>
+
+        <!-- 6. RELEVANT EXPERIENCE -->
+        <section class="section-block reveal">
+          <h2 class="section-title">Relevant Experience</h2>
+
+          <div class="exp-item">
+            <div class="exp-title">Data Analyst – Intern | <strong>Infotact Solutions</strong></div>
+            <div class="exp-meta">
+              <span>Bengaluru, India (Remote)</span>
+              <span>Nov 2025 – Jan 2026</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Collaborated with analytics and project teams for data cleaning and reporting using Excel and Google
+                Sheets.</li>
+              <li>Analyzed retail sales data using SQL, Excel, and Power BI to uncover key revenue trends.</li>
+              <li>Built interactive dashboards using Power BI and Tableau for business and financial analysis.</li>
+              <li>Automated data processing workflows using Python, improving total workflow efficiency.</li>
+              <li>Performed EDA, RFM, and pivot-based analysis to identify high-value customer segments.</li>
+            </ul>
+            <div class="exp-tools" style="margin-top: 20px; font-size: 0.8rem; letter-spacing: 0.5px;">
+              TOOLS: SQL (PostgreSQL), Excel, Power Query, Python, Power BI, ETL Tools
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-title">Data Management Operator – Intern | <strong>Laptophub.in</strong></div>
+            <div class="exp-meta">
+              <span>New Delhi, India (Remote)</span>
+              <span>July 2025 – Sept 2025</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Cleaned and managed large product datasets accurately using Excel and Google Sheets.</li>
+              <li>Ensured data accuracy, consistency, and SEO-friendly product content across the platform.</li>
+              <li>Collaborated with the web team for data integration and performance optimization.</li>
+            </ul>
+            <div class="exp-tools" style="margin-top: 20px; font-size: 0.8rem; letter-spacing: 0.5px;">
+              TOOLS: Microsoft Excel, Google Sheets, SEO Tools
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. CERTIFICATIONS -->
+        <section class="section-block reveal" style="margin-bottom: 20px;">
+          <h2 class="section-title">Certifications</h2>
+
+          <div class="cert-item">
+            <div>
+              <div class="cert-name">Deloitte Data Analytics Job Simulation</div>
+              <div class="cert-plat">Forage</div>
+            </div>
+            <a href="assets/img/certificates/Deloitte Data Analytics Job Simulation.pdf" class="cert-link">View Certificate</a>
+          </div>
+
+          <div class="cert-item">
+            <div>
+              <div class="cert-name">Power BI for Business Professionals</div>
+              <div class="cert-plat">Infosys Springboard</div>
+            </div>
+            <a href="https://drive.google.com/file/d/1bF5aAbUzyO7FsSoI4FnMFi0-493jg1Oz/view?usp=sharing"
+              class="cert-link">View Certificate</a>
+          </div>
+
+          <div class="cert-item">
+            <div>
+              <div class="cert-name">Oracle Certified Data Science Professional</div>
+              <div class="cert-plat">Oracle University</div>
+            </div>
+            <a href="
+https://drive.google.com/file/d/13gr-0Wi0huyM-5-vcfwjEjzopbzh8xTq/view?usp=sharing" class="cert-link">View
+              Certificate</a>
+          </div>
+
+
+          <div style="text-align: right; margin-top: 10px;">
+            <a href="certifications.html" class="view-all-certs">View All Certifications <span>&rarr;</span></a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+    </main>
+  <footer>
+    <div class="container">
+      <p style="text-align:center; margin:20px 0;"><span style="color: var(--text-muted); font-weight: 400; opacity: 0.8; font-size: 0.85rem; letter-spacing: 0.5px;">Designed &amp; Coded by <span style="color: var(--primary-light); font-weight: 600;">Gauri</span></span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

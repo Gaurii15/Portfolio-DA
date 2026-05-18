@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauri Borse | Data Analyst Portfolio</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="keywords" content="Gauri Borse, Data Analyst, Business Analyst, Power BI Portfolio, SQL Projects, Python Data Analysis, Data Visualization, AI Explorer">
+  <meta name="author" content="Gauri Borse">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta property="og:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta property="og:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta name="twitter:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="twitter:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <link rel="canonical" href="https://gauriborse.com/project-finance.html">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* Case Study Header */
+    .cs-header {
+      padding: 80px 20px 40px;
+      text-align: left;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cs-title {
+      font-size: 2.8rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+
+    .cs-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 80px;
+      height: 5px;
+      background: var(--gradient-btn);
+      border-radius: 3px;
+    }
+
+
+    .cs-desc {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin: 0 auto 30px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .cs-tags {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .cs-tag {
+      padding: 8px 24px;
+      background: rgba(192, 183, 232, 0.08);
+      border: 1px solid rgba(192, 183, 232, 0.3);
+      border-radius: var(--border-radius-pill);
+      color: var(--primary-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* DASHBOARD SLIDER */
+    .slider-wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto 80px;
+    }
+
+    .slider-viewport {
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--border-radius-lg);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+      border: 1px solid rgba(192, 183, 232, 0.1);
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      height: auto;
+      align-items: flex-start;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: auto;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .slide-caption {
+      margin-top: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 80%;
+    }
+
+    .slide-caption strong {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(10, 7, 20, 0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(192, 183, 232, 0.2);
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      color: var(--text-light);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      z-index: 10;
+      font-weight: bold;
+    }
+
+    .slider-btn:hover {
+      background: var(--gradient-btn);
+      color: var(--bg-deep);
+      border-color: transparent;
+      box-shadow: 0 0 20px rgba(129, 118, 175, 0.5);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-prev {
+      left: 20px;
+    }
+
+    .slider-next {
+      right: 20px;
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(192, 183, 232, 0.2);
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .dot.active {
+      background: var(--gradient-btn);
+      transform: scale(1.3);
+      box-shadow: 0 0 10px var(--primary-light);
+    }
+
+    /* CONTENT SECTIONS */
+    .cs-content-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cs-section {
+      margin-bottom: 70px;
+      background: rgba(255, 255, 255, 0.01);
+      padding: 40px;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid rgba(192, 183, 232, 0.05);
+    }
+
+    .cs-section-title {
+      font-size: 1.8rem;
+      color: var(--text-light);
+      margin-bottom: 25px;
+      font-weight: 700;
+      border-bottom: 2px solid rgba(192, 183, 232, 0.15);
+      padding-bottom: 12px;
+      display: inline-block;
+    }
+
+    .cs-text {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* YOUTUBE EMBED */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+      border-radius: var(--border-radius-md);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* CONCEPTS LEARNED CHIPS */
+    .concepts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .concept-chip {
+      background: var(--gradient-card);
+      border: 1px solid rgba(192, 183, 232, 0.15);
+      padding: 18px 25px;
+      border-radius: var(--border-radius-md);
+      color: var(--text-light);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.3s, border-color 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .concept-chip:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-light);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .concept-chip svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--primary-light);
+      flex-shrink: 0;
+    }
+
+    /* KEY INSIGHTS LIST */
+    .insights-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .insights-list li {
+      margin-bottom: 20px;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-weight: 300;
+      position: relative;
+      padding-left: 35px;
+    }
+
+    .insights-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--primary-light);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .cs-title {
+        font-size: 2.8rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 12px;
+      }
+
+      .cs-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 80px;
+        height: 5px;
+        background: var(--gradient-btn);
+        border-radius: 3px;
+      }
+
+
+      .slider-track {
+        height: auto;
+      }
+
+      .cs-section {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-img">
+        <svg viewBox="0 0 100 100" fill="var(--gradient-btn)">
+          <circle cx="50" cy="50" r="40" stroke="url(#grad1)" stroke-width="8" fill="none" />
+          <rect x="28" y="45" width="10" height="25" rx="3" fill="url(#grad1)" />
+          <rect x="45" y="30" width="10" height="40" rx="3" fill="url(#grad1)" />
+          <rect x="62" y="15" width="10" height="55" rx="3" fill="url(#grad1)" />
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#8176AF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#C0B7E8;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div> GB
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="certifications.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <div class="container page-wrapper">
+
+    <!-- PROJECT HEADER -->
+    <div class="cs-header reveal">
+      <h1 class="cs-title">Finance Market Risk & Volatility Analysis Dashboard</h1>
+      <p class="cs-desc">A data analytics project that analyzes stock market performance using historical financial
+        data. The dashboard focuses on daily returns, market volatility, rolling volatility trends, and Monte Carlo
+        simulations to evaluate risk and forecast possible future stock price movements.</p>
+
+      <div class="cs-tags">
+        <span class="cs-tag">Python</span>
+        <span class="cs-tag">Pandas</span>
+        <span class="cs-tag">NumPy</span>
+        <span class="cs-tag">Matplotlib</span>
+        <span class="cs-tag">Plotly</span>
+        <span class="cs-tag">Yahoo Finance</span>
+        <span class="cs-tag">Jupyter Notebook</span>
+        <span class="cs-tag">Streamlit</span>
+        <span class="cs-tag">GitHub</span>
+      </div>
+    </div>
+
+    <!-- DASHBOARD SLIDER -->
+    <div class="slider-wrapper reveal">
+      <div class="slider-viewport" id="dashboard-slider">
+        <div class="slider-track" id="slider-track">
+          <div class="slide">
+            <img loading="lazy" src="assets/img/dashboards/Finance1.png" alt="Daily Returns Chart">
+            <div class="slide-caption">
+
+              <span>Financial dashboard highlighting the stock’s average daily return and overall market volatility to
+                evaluate investment performance and risk behavior.</span>
+            </div>
+          </div>
+          <div class="slide">
+            <img loading="lazy" src="assets/img/dashboards/Finance2.png" alt="20-Day Rolling Volatility Chart">
+            <div class="slide-caption">
+              <strong>Daily Returns Chart</strong>
+              <span>Visualization of daily stock return fluctuations showing short-term market volatility and return
+                behavior over time.</span>
+            </div>
+          </div>
+          <div class="slide">
+            <img loading="lazy" src="assets/img/dashboards/Finance3.png" alt="20-Day Rolling Volatility Chart">
+            <div class="slide-caption">
+              <strong>20-Day Rolling Volatility Chart</strong>
+              <span>Tracks the changing market volatility over a rolling 20-day period to identify stable and high-risk
+                market phases.</span>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img loading="lazy" src="assets/img/dashboards/monte_carlo.png" alt="Monte Carlo Simulation Chart">
+            <div class="slide-caption">
+              <strong>Monte Carlo Simulation Chart</strong>
+              <span>Probability-based simulation of multiple future stock price paths used for forecasting and risk
+                estimation.</span>
+            </div>
+          </div>
+        </div>
+        <button class="slider-btn slider-prev" id="btn-prev">&#10094;</button>
+        <button class="slider-btn slider-next" id="btn-next">&#10095;</button>
+      </div>
+      <div class="slider-dots" id="slider-dots">
+        <!-- Dots injected by JS -->
+      </div>
+    </div>
+
+    <!-- CONTENT SECTIONS -->
+    <div class="cs-content-wrap">
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Problem Statement</h2>
+        <p class="cs-text">Financial markets are highly volatile, making it difficult for investors and analysts to
+          understand market risk and predict future stock behavior.<br><br>The goal of this project is to:</p>
+        <ul class="cs-text">
+          <li>Analyze stock return patterns</li>
+          <li>Measure market volatility</li>
+          <li>Identify risk trends over time</li>
+          <li>Simulate future stock prices using probabilistic forecasting methods</li>
+        </ul>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Approach (Short)</h2>
+        <ul class="cs-text">
+          <li>Collected historical stock market data using financial APIs.</li>
+          <li>Cleaned and preprocessed the dataset for time-series analysis.</li>
+          <li>Calculated daily returns and volatility metrics to measure market fluctuations.</li>
+          <li>Performed rolling volatility analysis to identify risk trends over time.</li>
+          <li>Applied Monte Carlo Simulation to forecast multiple possible future stock price movements.</li>
+          <li>Visualized insights through interactive charts and dashboards for better financial analysis.</li>
+        </ul>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Concepts & Skills Applied</h2>
+        <div class="concepts-grid">
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+            </svg> Financial Data Analysis
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 10h3v7H4zM10.5 10h3v7h-3zM2 19h20v3H2zM17 10h3v7h-3zM12 1L2 6v2h20V6L12 1z" />
+            </svg> Time Series Analysis
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+            </svg> Risk Analysis
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 3h18v18H3V3zm16 16V5H5v14h14zm-4-4h-4v-4h4v4zm-6 0H5v-4h4v4zm6-6h-4V5h4v4zm-6 0H5V5h4v4z" />
+            </svg> Volatility Measurement
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
+            </svg> Monte Carlo Simulation
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" />
+            </svg> Interactive Dashboard
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" />
+            </svg> Probability & Forecasting
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Key Insights</h2>
+        <ul class="insights-list">
+          <li><strong>Daily returns fluctuate frequently, showing continuous market uncertainty.</strong></li>
+          <li><strong>Certain periods experienced higher volatility spikes, indicating increased investment
+              risk.</strong></li>
+          <li><strong>Rolling volatility decreased in some phases, suggesting temporary market stability.</strong></li>
+          <li><strong>Monte Carlo simulations showed multiple future price possibilities rather than a single fixed
+              prediction.</strong></li>
+          <li><strong>The stock demonstrates moderate volatility overall, meaning both growth opportunities and risk
+              exist.</strong></li>
+        </ul>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Business Recommendations & Impact</h2>
+        <h3 style="color: var(--text-light); margin-top: 10px; margin-bottom: 10px; font-size: 1.3rem;">Recommendations
+        </h3>
+        <ul class="cs-text">
+          <li>Investors should monitor volatility before making short-term trading decisions.</li>
+          <li>During high-volatility periods, risk management strategies should be strengthened.</li>
+          <li>Monte Carlo forecasting can help investors estimate potential future outcomes before investing.</li>
+          <li>Long-term investment strategies may reduce the impact of short-term market fluctuations.</li>
+        </ul>
+        <h3 style="color: var(--text-light); margin-top: 20px; margin-bottom: 10px; font-size: 1.3rem;">Business Impact
+        </h3>
+        <ul class="cs-text">
+          <li>Helps investors make data-driven decisions</li>
+          <li>Supports portfolio risk assessment</li>
+          <li>Improves understanding of market behavior</li>
+          <li>Assists in financial forecasting and investment planning</li>
+        </ul>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Features</h2>
+        <ul class="cs-text">
+          <li><strong>Interactive financial dashboard</strong></li>
+          <li><strong>Daily return analysis</strong></li>
+          <li><strong>Volatility tracking</strong></li>
+          <li><strong>Rolling volatility calculation</strong></li>
+          <li><strong>Monte Carlo future price simulation</strong></li>
+          <li><strong>Time-series visualizations</strong></li>
+          <li><strong>Risk forecasting analytics</strong></li>
+        </ul>
+      </div>
+
+      <div
+        style="text-align: center; margin-top: 60px; margin-bottom: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        <a href="https://finance-risk-analysis-dashboard-gauriborse.streamlit.app/" target="_blank" class="btn" style="padding: 15px 40px;">VIEW LIVE APP</a>
+        <a href="https://github.com/Gaurii15/DA-internship-infotact-Finance---Market-Risk-Volatility-Dashboard.git"
+          target="_blank" class="btn btn-outline" style="padding: 15px 40px;">GITHUB REPOSITORY</a>
+        <a href="projects.html" class="btn btn-outline" style="padding: 15px 40px;">&larr; BACK TO ALL PROJECTS</a>
+      </div>
+
+    </div>
+  </div>
+
+    </main>
+  <footer>
+    <div class="container">
+      <p style="text-align:center; margin:20px 0;"><span style="color: var(--text-muted); font-weight: 400; opacity: 0.8; font-size: 0.85rem; letter-spacing: 0.5px;">Designed &amp; Coded by <span style="color: var(--primary-light); font-weight: 600;">Gauri</span></span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

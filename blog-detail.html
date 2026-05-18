@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauri Borse | Data Analyst Portfolio</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="keywords" content="Gauri Borse, Data Analyst, Business Analyst, Power BI Portfolio, SQL Projects, Python Data Analysis, Data Visualization, AI Explorer">
+  <meta name="author" content="Gauri Borse">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta property="og:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta property="og:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta name="twitter:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="twitter:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <link rel="canonical" href="https://gauriborse.com/blog-detail.html">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* Background Elements */
+    body { position: relative; overflow-x: hidden; }
+    
+    /* READ PROGRESS BAR */
+    .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 5px; background: rgba(10, 7, 20, 0.9); z-index: 1000; }
+    .progress-bar { height: 100%; background: var(--gradient-btn); width: 0%; border-radius: 0 4px 4px 0; box-shadow: 0 0 10px rgba(129, 118, 175, 0.8); }
+
+    .article-wrapper { max-width: 900px; margin: 60px auto 100px; padding: 0 20px; }
+    
+    /* ARTICLE HEADER */
+    .article-meta-top { margin-bottom: 30px; text-align: center; }
+    .article-category { font-size: 0.9rem; font-weight: 700; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; display: inline-block; background: rgba(129, 118, 175, 0.15); padding: 6px 15px; border-radius: var(--border-radius-pill); border: 1px solid rgba(192, 183, 232, 0.2); }
+    .article-title { font-size: 3rem; color: var(--text-light); line-height: 1.2; font-weight: 700; margin-bottom: 30px; }
+    @media (max-width: 768px) { .article-title { font-size: 2.2rem; } }
+    
+    .article-author-info { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 40px; }
+    .author-avatar { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--primary-light); overflow: hidden; }
+    .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .author-details { text-align: left; }
+    .author-name { font-weight: 700; color: var(--text-light); font-size: 1.05rem; }
+    .article-stats { font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 10px; margin-top: 3px; }
+
+    /* COVER IMAGE */
+    .article-cover { width: 100%; max-height: 500px; border-radius: var(--border-radius-lg); overflow: hidden; margin-bottom: 60px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); border: 1px solid rgba(192, 183, 232, 0.15); position: relative; }
+    .article-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    
+    /* ARTICLE BODY */
+    .article-body { font-size: 1.15rem; color: #D1CFDB; line-height: 1.8; max-width: 800px; margin: 0 auto; font-weight: 300; }
+    .article-body h2 { font-size: 2rem; color: var(--text-light); margin: 50px 0 20px; font-weight: 700; border-bottom: 1px solid rgba(192, 183, 232, 0.1); padding-bottom: 15px; }
+    .article-body h3 { font-size: 1.5rem; color: var(--text-light); margin: 30px 0 15px; font-weight: 600; }
+    .article-body p { margin-bottom: 25px; }
+    .article-body a { color: var(--primary-light); text-decoration: none; font-weight: 600; border-bottom: 1px dashed var(--primary-light); transition: all 0.3s; }
+    .article-body a:hover { color: var(--text-light); border-bottom-style: solid; }
+    .article-body ul { margin-bottom: 30px; padding-left: 25px; }
+    .article-body li { margin-bottom: 12px; }
+    
+    /* BLOCKQUOTE */
+    .article-blockquote { margin: 40px 0; padding: 30px 40px; background: rgba(129, 118, 175, 0.08); border-left: 4px solid var(--primary-light); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; font-size: 1.3rem; font-style: italic; color: var(--text-light); line-height: 1.6; }
+
+    /* YOUTUBE EMBED */
+    .video-wrapper { position: relative; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */ height: 0; overflow: hidden; border-radius: var(--border-radius-lg); margin: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(192, 183, 232, 0.15); background: var(--bg-deep); }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .video-caption { text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: -30px; margin-bottom: 40px; font-style: italic; }
+
+    /* BOTTOM CTA CARD */
+    .article-cta { margin-top: 80px; background: var(--gradient-card); border: 1px solid rgba(192, 183, 232, 0.2); border-radius: var(--border-radius-lg); padding: 50px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3); position: relative; overflow: hidden; }
+    .article-cta::before { content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: var(--primary-light); filter: blur(80px); opacity: 0.2; }
+    .article-cta h3 { font-size: 2rem; color: var(--text-light); margin-bottom: 15px; font-weight: 700; }
+    .article-cta p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 30px; max-width: 500px; margin-inline: auto; }
+  </style>
+</head>
+<body>
+  
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+
+  <header>
+        <a href="index.html" class="logo">
+      <div class="logo-img">
+        <svg viewBox="0 0 100 100" fill="var(--gradient-btn)">
+          <circle cx="50" cy="50" r="40" stroke="url(#grad1)" stroke-width="8" fill="none" />
+          <rect x="28" y="45" width="10" height="25" rx="3" fill="url(#grad1)" />
+          <rect x="45" y="30" width="10" height="40" rx="3" fill="url(#grad1)" />
+          <rect x="62" y="15" width="10" height="55" rx="3" fill="url(#grad1)" />
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#8176AF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#C0B7E8;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div> GB
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="certifications.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blogs.html" class="active">Blogs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <article class="article-wrapper">
+    
+    <!-- HEADER METADATA -->
+    <div class="article-meta-top reveal">
+      <div class="article-category">Dataset Architecture</div>
+      <h1 class="article-title">The Future of Data Warehousing and Cloud Pipelines</h1>
+      
+      <div class="article-author-info">
+        <div class="author-avatar">
+          <!-- Small initial avatar placeholder -->
+          <img loading="lazy" src="https://ui-avatars.com/api/?name=Gauri+Borse&background=161324&color=c0b7e8&bold=true" alt="Gauri Borse">
+        </div>
+        <div class="author-details">
+          <div class="author-name">Gauri Borse</div>
+          <div class="article-stats">
+            <span>May 12, 2024</span> • <span>⏱️ 5 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COVER IMAGE -->
+    <div class="article-cover reveal">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Data Warehousing Graphic">
+    </div>
+
+    <!-- STRUCTURED CONTENT -->
+    <div class="article-body reveal">
+      <p>Data warehousing has fundamentally shifted. For years, deploying an on-premise relational structure was the pinnacle of enterprise architectures. But with modern multi-cluster computing power distributed entirely on the cloud, the game has irrevocably changed.</p>
+      
+      <p>In this post, we’ll dive deep into why frameworks like Snowflake and Google BigQuery are taking over the landscape, and how an analyst can position their workflow to handle massive velocity.</p>
+
+      <h2>1. The Shift to Separation of Compute & Storage</h2>
+      <p>Historically, hardware bound the speed of the schema. If you needed more processing, you bought extra massive disk drives tied strictly to that isolated machine block. Today, <strong>cloud-native warehouses</strong> divorce these constraints.</p>
+      
+      <ul>
+        <li><strong>Compute Power:</strong> You scale processing nodes instantly without disrupting queries.</li>
+        <li><strong>Storage Density:</strong> Centralized blob storage operates independently.</li>
+        <li><strong>Cost Management:</strong> You only pay exactly for the query time running.</li>
+      </ul>
+
+      <div class="article-blockquote">
+        “The best modern architectures don't ask you to pre-guess your capacity. They elastically absorb whatever analytical velocity you throw at them.”
+      </div>
+
+      <h2>2. Handling the Modern ETL Bottleneck</h2>
+      <p>Building automated data ingestion channels is a necessity. Tools like <a href="#">dbt (data build tool)</a> alongside Airflow provide a unified staging environment. Instead of complex external scripting before injection, modern warehouses champion the ELT (Extract, Load, Transform) model where transformations exist strictly within the engine.</p>
+      
+      <!-- VIDEO EMBEDDING SECTION -->
+      <h3>Visualizing the Change</h3>
+      <p>For a fantastic visual breakdown of how modern ELT setups construct semantic layers directly atop raw data sources, check out this conceptual architecture walkthrough below.</p>
+      
+      <div class="video-wrapper">
+        <!-- Generic YouTube Video Placeholder for Data Engineering -->
+        <iframe src="https://www.youtube.com/embed/S2p0P1PudI4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">Understanding Data Lakes vs. Data Warehouses architectures.</div>
+
+      <h2>3. The "Semantic Layer" and BI Integrity</h2>
+      <p>Once your staging models are refined within the data warehouse, connecting business intelligence tools like <strong>Power BI</strong> or <strong>Tableau</strong> becomes flawless. Dashboard tools no longer need to compute heavy joins — they merely serve up predefined dimensional views.</p>
+      <p>This approach inherently locks out discrepancies. The metric definition for <i>"Total Recurring Revenue"</i> is defined exactly once in the warehouse layer, not independently programmed across five disparate BI dashboards.</p>
+
+      <h2>Conclusion</h2>
+      <p>It's an incredibly exciting time to be operating in data analytics. Modern automated cloud topologies allow us to stop worrying about infrastructure bottlenecks and immediately dedicate our focus toward extracting maximum value out of strategic modeling.</p>
+
+      <!-- CTA BOTTOM -->
+      <div class="article-cta">
+        <h3>Enjoyed this insight?</h3>
+        <p>I frequently partner with teams to architect robust data models and create visually stunning executive dashboards.</p>
+        <a href="contact.html" class="btn">Let's Work Together &rarr;</a>
+      </div>
+
+    </div>
+  </article>
+
+    </main>
+  <footer>
+    <div class="container">
+      <p style="text-align:center; margin:20px 0;"><span style="color: var(--text-muted); font-weight: 400; opacity: 0.8; font-size: 0.85rem; letter-spacing: 0.5px;">Designed &amp; Coded by <span style="color: var(--primary-light); font-weight: 600;">Gauri</span></span></p>
+    </div>
+  </footer>
+  
+  <script src="assets/js/animations.js"></script>
+  
+  <!-- READ PROGRESS INDICATOR SCRIPT -->
+  <script>
+    // Updates reading progress bar based on scroll position
+    window.onscroll = function() { updateProgressBar() };
+
+    function updateProgressBar() {
+      // Calculate how far down the user has scrolled relative to the document body
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      
+      // Update DOM element
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+  </script>
+</body>
+</html>

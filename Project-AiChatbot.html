@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauri Borse | Data Analyst Portfolio</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="keywords" content="Gauri Borse, Data Analyst, Business Analyst, Power BI Portfolio, SQL Projects, Python Data Analysis, Data Visualization, AI Explorer">
+  <meta name="author" content="Gauri Borse">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta property="og:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta property="og:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta name="twitter:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="twitter:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <link rel="canonical" href="https://gauriborse.com/Project-AiChatbot.html">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* Case Study Header */
+    .cs-header {
+      padding: 80px 20px 40px;
+      text-align: left;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cs-title {
+      font-size: 2.8rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+    .cs-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 80px;
+      height: 5px;
+      background: var(--gradient-btn);
+      border-radius: 3px;
+    }
+
+
+    .cs-desc {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin: 0 auto 30px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .cs-tags {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .cs-tag {
+      padding: 8px 24px;
+      background: rgba(192, 183, 232, 0.08);
+      border: 1px solid rgba(192, 183, 232, 0.3);
+      border-radius: var(--border-radius-pill);
+      color: var(--primary-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* DASHBOARD SLIDER */
+    .slider-wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto 80px;
+    }
+
+    .slider-viewport {
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--border-radius-lg);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+      border: 1px solid rgba(192, 183, 232, 0.1);
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      height: auto;
+      align-items: flex-start;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: auto;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .slide-caption {
+      margin-top: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 80%;
+    }
+
+    .slide-caption strong {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(10, 7, 20, 0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(192, 183, 232, 0.2);
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      color: var(--text-light);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      z-index: 10;
+      font-weight: bold;
+    }
+
+    .slider-btn:hover {
+      background: var(--gradient-btn);
+      color: var(--bg-deep);
+      border-color: transparent;
+      box-shadow: 0 0 20px rgba(129, 118, 175, 0.5);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-prev {
+      left: 20px;
+    }
+
+    .slider-next {
+      right: 20px;
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(192, 183, 232, 0.2);
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .dot.active {
+      background: var(--gradient-btn);
+      transform: scale(1.3);
+      box-shadow: 0 0 10px var(--primary-light);
+    }
+
+    /* CONTENT SECTIONS */
+    .cs-content-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cs-section {
+      margin-bottom: 70px;
+      background: rgba(255, 255, 255, 0.01);
+      padding: 40px;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid rgba(192, 183, 232, 0.05);
+    }
+
+    .cs-section-title {
+      font-size: 1.8rem;
+      color: var(--text-light);
+      margin-bottom: 25px;
+      font-weight: 700;
+      border-bottom: 2px solid rgba(192, 183, 232, 0.15);
+      padding-bottom: 12px;
+      display: inline-block;
+    }
+
+    .cs-text {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* YOUTUBE EMBED */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+      border-radius: var(--border-radius-md);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* CONCEPTS LEARNED CHIPS */
+    .concepts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .concept-chip {
+      background: var(--gradient-card);
+      border: 1px solid rgba(192, 183, 232, 0.15);
+      padding: 18px 25px;
+      border-radius: var(--border-radius-md);
+      color: var(--text-light);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.3s, border-color 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .concept-chip:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-light);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .concept-chip svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--primary-light);
+      flex-shrink: 0;
+    }
+
+    /* KEY INSIGHTS LIST */
+    .insights-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .insights-list li {
+      margin-bottom: 20px;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-weight: 300;
+      position: relative;
+      padding-left: 35px;
+    }
+
+    .insights-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--primary-light);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .cs-title {
+        font-size: 2.8rem;
+        position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+    .cs-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 80px;
+      height: 5px;
+      background: var(--gradient-btn);
+      border-radius: 3px;
+    }
+
+
+      .slider-track {
+        height: auto;
+      }
+
+      .cs-section {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+        <a href="index.html" class="logo">
+      <div class="logo-img">
+        <svg viewBox="0 0 100 100" fill="var(--gradient-btn)">
+          <circle cx="50" cy="50" r="40" stroke="url(#grad1)" stroke-width="8" fill="none" />
+          <rect x="28" y="45" width="10" height="25" rx="3" fill="url(#grad1)" />
+          <rect x="45" y="30" width="10" height="40" rx="3" fill="url(#grad1)" />
+          <rect x="62" y="15" width="10" height="55" rx="3" fill="url(#grad1)" />
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#8176AF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#C0B7E8;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div> GB
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="certifications.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <div class="container page-wrapper">
+
+    <!-- PROJECT HEADER -->
+    <div class="cs-header reveal">
+      <h1 class="cs-title">StudyBuddyAI – AI-Powered Study Assistant</h1>
+      <p class="cs-desc">StudyBuddyAI is an AI-powered web application that transforms static PDF study materials into
+        an interactive learning experience. Students can ask questions, generate notes, create quizzes, and evaluate
+        answers instantly.</p>
+
+      <div class="cs-tags">
+        <span class="cs-tag">Python</span>
+        <span class="cs-tag">Streamlit</span>
+        <span class="cs-tag">Groq API</span>
+        <span class="cs-tag">Prompt Engineering</span>
+        <span class="cs-tag">PDF Processing</span>
+        <span class="cs-tag">AI</span>
+      </div>
+    </div>
+
+    <!-- DASHBOARD SLIDER -->
+    <div class="slider-wrapper reveal">
+      <div class="slider-viewport" id="dashboard-slider">
+        <div class="slider-track" id="slider-track">
+          <div class="slide">
+            <img loading="lazy" src="assets/img/dashboards/Overview_img.png" alt="StudyBuddyAI Interface">
+            <div class="slide-caption">
+              <strong>StudyBuddyAI Interface</strong>
+              <span>The main interface where users can interact with their study materials.</span>
+            </div>
+          </div>
+          <div class="slide">
+            <img loading="lazy" src="assets/img/dashboards/Summary.png" alt="AI Summary Generation">
+            <div class="slide-caption">
+              <strong>AI Summary Generation</strong>
+              <span>Automatically generated summaries highlighting key concepts from the text.</span>
+            </div>
+          </div>
+          <div class="slide">
+            <img loading="lazy" src="assets/img/dashboards/Notes.png" alt="AI Notes Generation">
+            <div class="slide-caption">
+              <strong>AI Notes Generation</strong>
+              <span>Structured notes tailored to the user's specific learning needs.</span>
+            </div>
+          </div>
+          <div class="slide">
+            <img loading="lazy" src="assets/img/dashboards/chatbot_quiz.png" alt="AI Quiz Generation">
+            <div class="slide-caption">
+              <strong>AI Quiz Generation</strong>
+              <span>Interactive quizzes created dynamically to test understanding.</span>
+            </div>
+          </div>
+        </div>
+        <button class="slider-btn slider-prev" id="btn-prev">&#10094;</button>
+        <button class="slider-btn slider-next" id="btn-next">&#10095;</button>
+      </div>
+      <div class="slider-dots" id="slider-dots">
+        <!-- Dots injected by JS -->
+      </div>
+    </div>
+
+    <!-- CONTENT SECTIONS -->
+    <div class="cs-content-wrap">
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">🎥 Video Walkthrough</h2>
+        <div class="video-container">
+          <iframe src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(20, 18, 28, 0.95), rgba(33, 30, 46, 0.98)); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 2px dashed rgba(192, 183, 232, 0.2); border-radius: var(--border-radius-md); z-index: 2; box-shadow: inset 0 0 50px rgba(0,0,0,0.5);">
+            <svg viewBox="0 0 24 24" style="width: 50px; height: 50px; fill: var(--primary-light); margin-bottom: 15px; opacity: 0.8; filter: drop-shadow(0 0 10px rgba(192, 183, 232, 0.5));">
+              <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+            </svg>
+            <h3 style="font-size: 1.8rem; margin-bottom: 8px; color: var(--text-light); letter-spacing: 1px;">Video Coming Soon</h3>
+            <p style="font-size: 1rem; color: var(--text-muted); max-width: 80%; line-height: 1.5;">The detailed video walkthrough for this project is currently in production.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Problem Statement</h2>
+        <p class="cs-text">Students often struggle with lengthy study materials, time-consuming note-making, and
+          ineffective revision methods. Traditional PDF documents lack interactivity, making learning less engaging and
+          efficient. StudyBuddyAI solves this by converting PDFs into an intelligent, personalized learning assistant.
+        </p>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Approach & Methodology</h2>
+        <ul class="cs-text">
+          <li>Built an end-to-end AI web application using Streamlit</li>
+          <li>Integrated Groq API for lightning-fast LLM responses</li>
+          <li>Extracted PDF text using PyPDF2</li>
+          <li>Implemented prompt engineering for multiple response modes</li>
+          <li>Generated summaries, notes, quizzes, and evaluations dynamically</li>
+          <li>Enabled PDF and chat history downloads</li>
+        </ul>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Concepts & Skills Applied</h2>
+        <div class="concepts-grid">
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79 2.73 2.71 7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 2.45-.98 4.75-2.75 6.47-3.52 3.51-9.25 3.51-12.77 0-3.52-3.5-3.52-9.19 0-12.69 3.52-3.5 9.25-3.5 12.77 0l2.75-2.82V10.12z" />
+            </svg> Large Language Models (LLM)
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+            </svg> Prompt Engineering
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </svg> Retrieval-Based QA
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z" />
+            </svg> PDF Text Extraction
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 9h-2V7h-2v5H6v-2H4v2c0 2.21 1.79 4 4 4h4c2.21 0 4-1.79 4-4v-2h-2v2h-2v-2z" />
+            </svg> Streamlit Development
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19.3 16.9c.4-.7.7-1.5.7-2.4 0-2.5-2-4.5-4.5-4.5S11 12 11 14.5s2 4.5 4.5 4.5c.9 0 1.7-.3 2.4-.7l3.2 3.2 1.4-1.4-3.2-3.2zM15.5 17c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zM12 20v2C6.48 22 2 17.52 2 12S6.48 2 12 2v2c-4.42 0-8 3.58-8 8s3.58 8 8 8z" />
+            </svg> API Integration
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+            </svg> Report Generation
+          </div>
+          <div class="concept-chip">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm5 4h-2v-2h2v2zm0-4h-2V7h2v6z" />
+            </svg> User Experience Design
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Key Features</h2>
+        <ul class="insights-list">
+          <li><strong>AI Chatbot for PDF-based Q&A:</strong> Ask anything directly related to the PDF content.</li>
+          <li><strong>Smart summarization:</strong> Get an instant overview with key points.</li>
+          <li><strong>Structured notes generation:</strong> Automatically structure content into easily readable notes.
+          </li>
+          <li><strong>Automatic quiz creation:</strong> Test your knowledge with dynamically generated quizzes.</li>
+          <li><strong>Answer evaluation with feedback:</strong> Receive intelligent feedback on your answers.</li>
+          <li><strong>Performance score tracking:</strong> Keep track of learning progress through scoring.</li>
+          <li><strong>Downloadable Resources:</strong> Download notes as PDF and export chat history.</li>
+        </ul>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Key Insights</h2>
+        <ul class="insights-list">
+          <li><strong>Converts passive study material into interactive learning.</strong></li>
+          <li><strong>Improves revision speed and retention.</strong></li>
+          <li><strong>Enables self-assessment through AI-generated quizzes.</strong></li>
+          <li><strong>Provides personalized explanations for complex topics.</strong></li>
+          <li><strong>Reduces manual effort in note preparation.</strong></li>
+        </ul>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Business Impact & Value</h2>
+        <ul class="cs-text">
+          <li>Enhances student productivity and engagement</li>
+          <li>Saves significant study and revision time</li>
+          <li>Supports exam preparation and concept clarity</li>
+          <li>Scalable for educational institutions and EdTech platforms</li>
+          <li>Demonstrates practical application of Generative AI in education</li>
+        </ul>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Advanced Features</h2>
+        <ul class="cs-text">
+          <li><strong>Multiple AI response modes:</strong> Normal Mode, Explain Simply Mode, Exam Answer Mode</li>
+          <li><strong>Context-aware PDF interactions:</strong> Ensures LLM doesn't hallucinate outside of PDF scope</li>
+          <li><strong>Intelligent answer evaluation:</strong> Gives exact pinpointed improvements</li>
+          <li><strong>Dynamic score generation:</strong> Computes the accuracy level of answers</li>
+          <li><strong>Downloadable study resources:</strong> Easy to access offline notes</li>
+        </ul>
+      </div>
+
+      <div class="cs-section reveal">
+        <h2 class="cs-section-title">Tech Stack & Future Enhancements</h2>
+        <p class="cs-text" style="margin-bottom: 20px;">
+          <strong>Tech Stack:</strong> Python, Streamlit, Groq API, PyPDF2, ReportLab
+        </p>
+        <p class="cs-text">
+          <strong>Future Enhancements:</strong> Voice interaction, OCR for scanned PDFs, Multi-language support, User
+          authentication, Learning analytics dashboard.
+        </p>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px; margin-bottom: 40px;">
+        <a href="https://studybuddyai-by-gauriborse-x4pagzvtaucurrgjehzqwn.streamlit.app/" target="_blank" class="btn" style="padding: 15px 40px; margin-right: 20px;">VIEW LIVE</a>
+        <a href="https://github.com/Gaurii15/AI_study_assisted_chatbot.git" target="_blank" class="btn" style="padding: 15px 40px; margin-right: 20px;">GITHUB REPOSITORY</a>
+        <a href="projects.html" class="btn btn-outline" style="padding: 15px 40px;">&larr; BACK TO ALL PROJECTS</a>
+      </div>
+
+    </div>
+  </div>
+
+    </main>
+  <footer>
+    <div class="container">
+      <p style="text-align:center; margin:20px 0;"><span style="color: var(--text-muted); font-weight: 400; opacity: 0.8; font-size: 0.85rem; letter-spacing: 0.5px;">Designed &amp; Coded by <span style="color: var(--primary-light); font-weight: 600;">Gauri</span></span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

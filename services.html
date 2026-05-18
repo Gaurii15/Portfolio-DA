@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauri Borse | Data Analyst Portfolio</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="keywords" content="Gauri Borse, Data Analyst, Business Analyst, Power BI Portfolio, SQL Projects, Python Data Analysis, Data Visualization, AI Explorer">
+  <meta name="author" content="Gauri Borse">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta property="og:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta property="og:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauri Borse | Data Analyst Portfolio">
+  <meta name="twitter:description" content="Portfolio of Gauri Borse showcasing data analytics projects, Power BI dashboards, SQL analysis, Python projects, blogs, certifications, and AI exploration.">
+  <meta name="twitter:image" content="https://gauriborse.com/assets/img/self/corporateimage.jpeg">
+
+  <link rel="canonical" href="https://gauriborse.com/services.html">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    .page-wrapper { margin: 80px auto; padding-top: 40px; }
+    
+    /* 1. HERO SECTION */
+    .hero-section { text-align: center; max-width: 800px; margin: 0 auto 80px auto; }
+    .hero-title { font-size: 3.5rem; margin-bottom: 25px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+    .hero-desc { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.6; font-weight: 300; }
+    .hero-cta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    
+    /* 2. SERVICES SECTION */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; margin-bottom: 100px; }
+    .service-card { padding: 40px 30px; text-align: left; display: flex; flex-direction: column; gap: 15px; }
+    .service-icon { width: 65px; height: 65px; background: rgba(129, 118, 175, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; transition: all 0.4s ease; border: 1px solid rgba(192, 183, 232, 0.2); }
+    .service-icon svg { width: 32px; height: 32px; fill: var(--primary-light); }
+    .service-card:hover .service-icon { transform: scale(1.1) rotate(5deg); background: rgba(129, 118, 175, 0.25); box-shadow: 0 0 20px rgba(129, 118, 175, 0.4); border-color: var(--primary-light); }
+    .service-card h3 { font-size: 1.45rem; color: var(--text-light); }
+    .service-bullets { list-style: none; padding: 0; margin: 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; flex-grow: 1; }
+    .service-bullets li { position: relative; padding-left: 20px; margin-bottom: 12px; }
+    .service-bullets li::before { content: '▹'; position: absolute; left: 0; color: var(--primary-light); font-weight: bold; font-size: 1.1rem; }
+    
+    /* 3. HOW I WORK SECTION */
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-size: 2.5rem; color: var(--text-light); text-transform: uppercase; margin-bottom: 15px; }
+    .section-header p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+    
+    .workflow-container { display: flex; justify-content: space-between; position: relative; margin-bottom: 120px; gap: 20px; }
+    .workflow-line { position: absolute; top: 40px; left: 10%; right: 10%; height: 2px; background: rgba(192, 183, 232, 0.15); z-index: 0; }
+    .workflow-line::after { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--gradient-btn); transition: width 2s cubic-bezier(0.1, 0.7, 0.1, 1); box-shadow: 0 0 10px rgba(129, 118, 175, 0.6); }
+    .workflow-container.active .workflow-line::after { width: 100%; }
+    
+    .workflow-step { flex: 1; text-align: center; position: relative; z-index: 1; padding: 0 10px; }
+    .step-number { width: 80px; height: 80px; margin: 0 auto 20px; background: var(--bg-deep); border: 2px solid rgba(192, 183, 232, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: var(--text-light); transition: all 0.4s ease; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+    .workflow-step:hover .step-number { border-color: var(--primary-light); box-shadow: 0 0 25px rgba(129, 118, 175, 0.6); color: var(--text-light); background: var(--gradient-btn); transform: scale(1.1); }
+    .step-title { font-size: 1.15rem; font-weight: 700; color: var(--text-light); margin-bottom: 10px; }
+    .step-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+    
+    @media (max-width: 800px) {
+      .workflow-container { flex-direction: column; align-items: center; gap: 40px; }
+      .workflow-line { display: none; }
+      .workflow-step { max-width: 300px; }
+    }
+
+    /* 4. WHY WORK WITH ME & 5. IMPACT SECTION */
+    .bottom-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 100px; }
+    @media (max-width: 900px) { .bottom-wrapper { grid-template-columns: 1fr; } }
+    
+    .feature-list { display: flex; flex-direction: column; gap: 20px; }
+    .feature-item { display: flex; align-items: flex-start; gap: 18px; background: rgba(255,255,255,0.015); padding: 25px; border-radius: var(--border-radius-md); border: 1px solid rgba(192, 183, 232, 0.05); transition: all 0.3s ease; }
+    .feature-item:hover { background: rgba(255,255,255,0.04); transform: translateX(8px); border-color: rgba(192, 183, 232, 0.2); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    .feature-icon { color: var(--text-light); font-size: 1.25rem; font-weight: bold; background: var(--gradient-btn); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 10px rgba(129, 118, 175, 0.5); }
+    .feature-text h4 { font-size: 1.15rem; color: var(--text-light); margin-bottom: 8px; }
+    .feature-text p { font-size: 0.95rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
+    
+    .impact-card { background: var(--gradient-card); border: 1px solid rgba(192, 183, 232, 0.2); border-radius: var(--border-radius-lg); padding: 50px 40px; text-align: center; box-shadow: 0 0 40px rgba(0,0,0,0.3); display: flex; flex-direction: column; justify-content: center; height: 100%; transition: transform 0.4s ease; position: relative; overflow: hidden; }
+    .impact-card::before { content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: var(--primary-light); filter: blur(80px); opacity: 0.2; }
+    .impact-card:hover { transform: translateY(-8px); border-color: var(--primary-light); box-shadow: 0 15px 40px rgba(129, 118, 175, 0.2); }
+    .impact-stat { font-size: 3.5rem; font-weight: 700; color: var(--text-light); margin-bottom: 5px; text-shadow: 0 0 20px rgba(192, 183, 232, 0.4); }
+    .impact-label { font-size: 1rem; color: var(--primary-light); margin-bottom: 40px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .impact-label:last-child { margin-bottom: 0; }
+    
+    /* 6. FINAL CTA */
+    .cta-section { text-align: center; padding: 80px 40px; background: linear-gradient(180deg, rgba(10, 7, 20, 0.2) 0%, rgba(129, 118, 175, 0.05) 100%); border: 1px solid rgba(192, 183, 232, 0.1); border-radius: var(--border-radius-lg); position: relative; overflow: hidden; }
+    .cta-section::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gradient-btn); }
+    .cta-section h2 { font-size: 2.8rem; color: var(--text-light); margin-bottom: 40px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <header>
+        <a href="index.html" class="logo">
+      <div class="logo-img">
+        <svg viewBox="0 0 100 100" fill="var(--gradient-btn)">
+          <circle cx="50" cy="50" r="40" stroke="url(#grad1)" stroke-width="8" fill="none" />
+          <rect x="28" y="45" width="10" height="25" rx="3" fill="url(#grad1)" />
+          <rect x="45" y="30" width="10" height="40" rx="3" fill="url(#grad1)" />
+          <rect x="62" y="15" width="10" height="55" rx="3" fill="url(#grad1)" />
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#8176AF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#C0B7E8;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div> GB
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="certifications.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <div class="container page-wrapper">
+    
+    <!-- 1. HERO SECTION -->
+    <div class="hero-section reveal">
+      <h1 class="hero-title">What I Can Do With Your Data</h1>
+      <p class="hero-desc">I transform raw data into meaningful insights, interactive dashboards, and strategic business decisions.</p>
+      <div class="hero-cta">
+        <a href="projects.html" class="btn">View Projects</a>
+        <a href="contact.html" class="btn btn-outline">Start a Project</a>
+      </div>
+    </div>
+
+    <!-- 2. SERVICES SECTION -->
+    <div class="services-grid reveal">
+      
+      <div class="card service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        </div>
+        <h3>Data Analysis</h3>
+        <ul class="service-bullets">
+          <li>Performing deep-dive descriptive analytics</li>
+          <li>Identifying hidden trends and anomalies</li>
+          <li>Conducting statistical analysis and testing</li>
+        </ul>
+      </div>
+
+      <div class="card service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16 16V5H5v14h14zm-4-8h2v6h-2v-6zm-4-4h2v10h-2V7H7v10h2V7z"/></svg>
+        </div>
+        <h3>Dashboard Development</h3>
+        <ul class="service-bullets">
+          <li>Designing interactive KPIs in Power BI</li>
+          <li>Building executive-level reporting tools</li>
+          <li>Data modeling and optimizing UX design</li>
+        </ul>
+      </div>
+
+      <div class="card service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 15h-2v-2h2v2zm0-4h-2V7h2v7z"/></svg>
+        </div>
+        <h3>Data Cleaning & Prep</h3>
+        <ul class="service-bullets">
+          <li>Handling missing values and outliers</li>
+          <li>Formatting unstructured raw datasets</li>
+          <li>Ensuring high data integrity and accuracy</li>
+        </ul>
+      </div>
+
+      <div class="card service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21l-8-8 8-8 8 8-8 8m0-12.5l-4.5 4.5 4.5 4.5 4.5-4.5L12 8.5z"/></svg>
+        </div>
+        <h3>Business Insights</h3>
+        <ul class="service-bullets">
+          <li>Translating complex data into strategy</li>
+          <li>Providing recommendations for ROI</li>
+          <li>Clear KPI monitoring and storytelling</li>
+        </ul>
+      </div>
+
+      <div class="card service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+        </div>
+        <h3>Python Processing</h3>
+        <ul class="service-bullets">
+          <li>Automating workflows with Pandas</li>
+          <li>Advanced data manipulation with NumPy</li>
+          <li>Building resilient processing pipelines</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 3. HOW I WORK -->
+    <div class="reveal">
+      <div class="section-header">
+        <h2>How I Work</h2>
+        <p>A systematic and structured approach to solving complex data problems</p>
+      </div>
+      
+      <div class="workflow-container reveal-left">
+        <div class="workflow-line"></div>
+        
+        <div class="workflow-step">
+          <div class="step-number">01</div>
+          <h4 class="step-title">Understand Problem</h4>
+          <p class="step-desc">Defining the core business objectives, identifying questions, and setting key metrics.</p>
+        </div>
+        
+        <div class="workflow-step">
+          <div class="step-number">02</div>
+          <h4 class="step-title">Data Collection & Cleaning</h4>
+          <p class="step-desc">Gathering, preprocessing, and formatting robust datasets for accurate analysis.</p>
+        </div>
+        
+        <div class="workflow-step">
+          <div class="step-number">03</div>
+          <h4 class="step-title">Analysis & Visualization</h4>
+          <p class="step-desc">Discovering underlying patterns and building interactive, beautiful dashboards.</p>
+        </div>
+        
+        <div class="workflow-step">
+          <div class="step-number">04</div>
+          <h4 class="step-title">Insights & Delivery</h4>
+          <p class="step-desc">Translating visualizations into clear, strategic recommendations and delivering results.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. WHY WORK WITH ME & 5. IMPACT SECTION -->
+    <div class="bottom-wrapper reveal">
+      
+      <!-- Why Work With Me -->
+      <div class="why-me">
+        <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+          <h2>Why Work With Me</h2>
+        </div>
+        <div class="feature-list">
+          
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Data-Driven Approach</h4>
+              <p>Every business decision is backed by solid empirical evidence and rigorous quantitative analysis.</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Clean & Intuitive Dashboards</h4>
+              <p>I prioritize UX to ensure complex data models are easily digestible for non-technical stakeholders.</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Business-Focused Insights</h4>
+              <p>Analysis without business context is noise. I deliver strategies that directly impact your metrics.</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Clear Communication</h4>
+              <p>Effective data storytelling efficiently bridges the gap between technical processes and end goals.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Trust / Impact -->
+      <div class="impact">
+        <div class="impact-card">
+          <h2 style="margin-bottom: 40px; color: var(--text-light); text-transform: uppercase; font-size: 1.8rem;">Proven Impact</h2>
+          
+          <div class="impact-stat">50K+</div>
+          <div class="impact-label">Rows of Complex Data Analyzed</div>
+          
+          <div class="impact-stat">100%</div>
+          <div class="impact-label">Interactive Dashboard Delivery</div>
+          
+          <div class="impact-stat">✓</div>
+          <div class="impact-label">Actionable Strategies Generated</div>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- 6. FINAL CTA -->
+    <div class="cta-section reveal">
+      <h2>Let’s Build Something Impactful</h2>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn">Contact Me</a>
+        <a href="projects.html" class="btn btn-outline">View Projects</a>
+      </div>
+    </div>
+
+  </div>
+
+    </main>
+  <footer>
+    <div class="container">
+      <p style="text-align:center; margin:20px 0;"><span style="color: var(--text-muted); font-weight: 400; opacity: 0.8; font-size: 0.85rem; letter-spacing: 0.5px;">Designed &amp; Coded by <span style="color: var(--primary-light); font-weight: 600;">Gauri</span></span></p>
+    </div>
+  </footer>
+  
+  <script src="assets/js/animations.js"></script>
+  <script>
+    // Trigger workflow timeline line loading on scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      const workflowCont = document.querySelector('.workflow-container');
+      if(workflowCont) observer.observe(workflowCont);
+    });
+  </script>
+</body>
+</html>
